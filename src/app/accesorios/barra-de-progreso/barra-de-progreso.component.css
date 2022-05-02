@@ -1,0 +1,22 @@
+
+path {
+    stroke-linecap: round;
+    stroke-width: 6;
+  }
+  
+path.grey {
+    stroke: lightgrey;
+  }
+  
+path.purple {
+    stroke: #a7cae6;
+    stroke-dasharray: calc(40 * 3.142 * 1.85);
+
+    /* adjust last number for variance */
+  }
+
+h1{
+    position: absolute;
+    color: #a7cae6;
+    
+  }

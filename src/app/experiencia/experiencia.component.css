@@ -1,0 +1,43 @@
+
+.card {
+  border-radius: 0 0 30px 30px ;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+}  
+.card-group {
+  border-radius: 0 0 30px 30px ;
+  
+}
+
+.card-body {
+  background-color: #ffffff;
+  border-radius: 0 0 30px 30px ;
+  
+}
+
+p {
+  padding: 15px;
+  color: #A4A4A4;
+}
+
+
+.btn{
+  margin: 0;
+}
+
+h2{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  font-family: helvetica, sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  color: #599DA8;
+
+}
+
+h5{
+  padding: 15px;
+  text-align: left;
+  color: #A4A4A4;
+  font: helvetica, arial, helvetica;
+}

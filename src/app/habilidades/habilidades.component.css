@@ -1,0 +1,24 @@
+.card{
+    max-width: 31%;;
+    box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+    border-radius: 0 0 30px 30px ;
+    padding: 0;
+    
+  }
+.card-group{
+  padding: 10px;
+}
+
+
+h5{
+    text-align: center;
+    padding: 20px;
+    border-bottom: solid 3px #a7cae6 ;
+}
+app-barra-de-progreso{
+    box-sizing: border-box;
+    width:15vh;
+    max-width: 500px;
+    height:15vh;
+    max-height: 500px;
+}

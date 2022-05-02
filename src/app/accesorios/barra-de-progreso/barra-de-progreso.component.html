@@ -1,0 +1,16 @@
+<div class="container d-flex justify-content-center align-items-center">
+  <h1 class="align-middle" id="numero">{{value}}%</h1>
+  <div id="medio">
+    <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" width="200" height="200">
+      <path class="grey" d="M40,90
+               A40,40 0 1,1 60,90"
+            style="fill:none;"/>
+      <path id= "valorPorcentaje" class="purple" d="M40,90
+               A40,40 0 1,1 60,90"
+            style="fill:none;"
+            [ngStyle]="{'stroke-dasharray':(value* 3.142 * 1.85)/2.3}"/></svg>
+  </div>
+</div>
+<div class="container d-flex justify-content-center align-items-center p-3">
+  <input class="align-items-center" style="color:black" type="range" [(ngModel)]="value" required>
+</div>

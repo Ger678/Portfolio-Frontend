@@ -1,0 +1,36 @@
+<p>login works!</p>
+<div class="card">
+    <div class="card-img-top"> </div>
+    <div class="card-body">
+        <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
+            <div class="mb-3">
+                <label class="form-label">
+                <i class="fa-solid fa-ellipsis fa-lg m-3"></i>
+                 Nombre</label>
+                <input 
+                type="text" formControlName="nombre" class="form-control" placeholder="" >
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fa-solid fa-user fa-lg m-3"></i>
+                    Usuario</label>
+                <input type="text" formControlName="usuario" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fa-solid fa-at fa-lg m-3"></i>
+                    Email</label>
+                <input type="email" formControlName="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">
+                    <i class="fa-solid fa-lock fa-lg m-3"></i>
+                    Contraseña</label>
+                <input type="password" formControlName="clave" class="form-control">
+            </div>
+            <button class="btn btn-success"  [disabled]="signupForm.invalid" type="submit">
+                <i class="fa-solid fa-circle-check fa-lg m-2"></i>
+                Registrase</button>
+        </form>
+    </div>
+</div>
