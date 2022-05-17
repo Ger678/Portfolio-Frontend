@@ -3,7 +3,6 @@ body{
 }
 
 div{
-    box-sizing: border-box;
-    max-width: 1500px;
     padding: 20px;
 }
+

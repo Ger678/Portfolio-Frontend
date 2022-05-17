@@ -1,18 +1,19 @@
 
-<div id="tarjeta">
-  <div class="card container-fluid p-0 mt-3">
-    <section class="portada"></section>
-      <div>
-
+<div class="card " [@entrada]=" view ? 'in' : 'out'" >
+      <img class="portada" src="assets/img/fondo_ilustracion-fondo.svg" alt="Card image cap">
+      <div class="iconos">
+        <i class="fa-brands fa-instagram fa-xl"></i>
+        <i class="fa-brands fa-facebook-f fa-xl"></i>
+        <i class="fa-brands fa-discord fa-xl"></i>
       </div>
-      <div class= "card-body">
-      <div class="card-text" >
-          <h2 class= "card-title">GERMAN AGUIRRE</h2>
-          <h5>Campo Quijano Salta Argentina</h5>
-          <h5>Soy estudiante de programacion web en Argentina Programa. Soy una persona autodidactada, y
-            siempre que puedo intento aprender nuevas tecnologias. Estoy buscando formar parte de un proyecto 
-            que me permita proyectarme profesionalmente y dejar mi marcar en la web.
-          </h5>
-  </div>
-  <boton-edit color="#52ab98"></boton-edit>
+      <img class="profile" src="assets/img/perfil.jpg" alt="Card image cap">
+      <div class="titulo">
+        <h2 class= "title">GERMAN AGUIRRE</h2>
+        <h5 class= "subtitle">DESARROLLADOR WEB FULLSTACK</h5>
+      </div>
+      <h5 class="texto">Soy estudiante de programacion web en Argentina Programa. Soy una persona autodidactada, y
+        siempre que puedo intento aprender nuevas tecnologias. Estoy buscando formar parte de un proyecto 
+        que me permita proyectarme profesionalmente y dejar mi marcar en la web.
+      </h5>
+      <boton-edit class="boton" color="#52ab98"></boton-edit>
 </div>

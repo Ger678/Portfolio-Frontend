@@ -1,19 +1,15 @@
 
-span{
-    text-align: center;
+.logo{
     float: left;
     box-sizing: border-box;
-    color: #fff;
-    font-size: 30px;
-    padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
+    width: 140px;
 }
 
-small{
-  color: rgb(228, 228, 228);
-  font-size:15px;
+.logo:hover{
+  cursor: pointer;
+  transform: scale(1.2);
 }
+
 .topnav {
     display: flex;
     align-items: center;
@@ -34,9 +30,45 @@ small{
   
   /* Change color on hover */
   .topnav i:hover {
-    color:#52ab98;
-  }
+    cursor: pointer;
+    transform: scale(1.3);
+   }
 
   #user{
-    margin-left: 50px;
+    margin-left: 2em;
+  }
+
+  .modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .close{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
   }

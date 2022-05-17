@@ -1,0 +1,21 @@
+.email{
+    background-color: #599DA8; 
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form{
+    padding: 1em;
+}
+
+
+.grupo{
+    padding-bottom: 0.5em;
+    border: none !important;
+}
+
+button{
+    background-color: #04c924;
+    color: #fff;
+}

@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 // importamos las librerias de formulario que necesitamos
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +12,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  display='none';
 
   signupForm: FormGroup;
 
   constructor(
+
+    private modalService: NgbModal,
+    public activeModalService: NgbActiveModal,
     // inyectar en el constructor el formBuilder
     private _builder: FormBuilder) {
       // creamos el grupo de controles para el formulario
@@ -24,17 +29,21 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       clave: ['', [Validators.required, Validators.minLength(8)]]
     })
+    
   }
 
-enviar(values: any){
+  enviar(values: any){
   console.log(values)
-}
+  }
 
   ngOnInit(): void {
   }
 
+  closeModal(){
+    this.activeModalService.close();
+  }
+
 }
-function input() {
-  throw new Error('Function not implemented.');
-}
+
+
 

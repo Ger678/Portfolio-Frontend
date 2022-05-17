@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { BotonEditComponent } from './accesorios/boton-edit/boton-edit.component
 import { EducacionComponent } from './educacion/educacion.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './accesorios/login/login.component'
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { PieComponent } from './pie/pie.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -26,15 +30,17 @@ import { LoginComponent } from './accesorios/login/login.component'
     BotonEditComponent,
     EducacionComponent,
     LoginComponent,
+    PieComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [NgbActiveModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

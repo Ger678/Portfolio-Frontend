@@ -1,10 +1,16 @@
-<div class="topnav container shadow sticky-xl-top">
-    <span> German Aguirre <small>/ WEB PAGE DESIGNER</small> </span>
+<div class="topnav container shadow-lg sticky-xl-top">
+    <img class="logo img-responsive" src="assets\img\icons\pequeños\Recurso 130.svg" alt="Argentina Programa">
     <div class="menu-container">
-      <i id="user" class="fa-solid fa-circle-user fa-2xl"></i>
-      <i class="fa-brands fa-facebook fa-2xl"></i>
-      <i class="fa-brands fa-github fa-2xl"></i>
-      <i class="fa-brands fa-linkedin fa-2xl"></i> 
+      <i id="myBtn" (click)="openModal()" class="fa-solid fa-circle-user fa-2xl ">
+        <div id="myModal" class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':'display'}">
+          <app-login class="modal-content">
+            <span class="close">&times;</span>
+          </app-login>
+        </div>
+      </i>
+      <a href="https://www.facebook.com/"><i class="fa-solid fa-envelope fa-2xl"></i></a>
+      <a href="https://www.github.com/"><i class="fa-brands fa-github fa-2xl"></i></a>
+      <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin fa-2xl"></i> </a>
     </div>
 
   </div>

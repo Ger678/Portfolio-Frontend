@@ -1,33 +1,80 @@
+*{
+  box-sizing: border-box;
+}
 
-.card {
+svg {
+  overflow: visible;
+}
+
+i{
+  display:flex;
+  justify-self:center;
+  align-self: center;
+  color: #00C2D1;
+}
+
+.tarjeta {
   border-radius: 0 0 30px 30px ;
   box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
-}
-
-.card-body {
   background-color: #ffffff;
   border-radius: 0 0 30px 30px ;
-  
+  padding-bottom: 2em;
+
+  display: grid;
+  column-gap: 0.5em;
+  grid-template-rows: 8em auto auto; 
+  grid-template-columns: 0.4fr 6fr 2fr; 
 }
 
-.btn{
-  margin: 0;
+.icon{
+  grid-area: 1 / 3 / 4 / 4;
+  width: 200px;
+  max-width: 250px;
+  max-height: auto;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  overflow: visible;
+  z-index: 3;
 }
 
-h2{
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 15px;
+.card-tittle{ 
+  grid-area: 1 / 2 / 2 / 3;
+  display: flex;
+  justify-self: flex-start;
+  align-self: flex-end;
   font-family: helvetica, sans-serif;
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: bold;
-  color: #599DA8;
+  color: #599DA8;  
+}
+
+#info{
+  grid-area: 3 / 2 / 4 / 3;
+  display:flex;
+  flex-direction: column;
+}
+
+.Educ{
+  display: flex;
+  flex-direction: row;
+  padding-left: 40px;
 
 }
 
-h5{
-  padding: 15px;
+.info{
+  padding-left: 15px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-align: left;
+  text-indent: 10px;
+  letter-spacing: 1px;
   color: #A4A4A4;
   font: helvetica, arial, helvetica;
+}
+
+.info h5{
+  color: #00909b;
 }

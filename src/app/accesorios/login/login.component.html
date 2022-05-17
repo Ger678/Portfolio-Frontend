@@ -1,6 +1,9 @@
-<p>login works!</p>
 <div class="card">
-    <div class="card-img-top"> </div>
+    <i id="icon-x" class="fa-solid fa-x fa-xl close" aria-label="Close" (click)="activeModalService.dismiss('Cross click')"></i>
+    <div class="card-img-top">
+        
+        
+    </div>
     <div class="card-body">
         <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
             <div class="mb-3">
@@ -28,9 +31,15 @@
                     Contraseña</label>
                 <input type="password" formControlName="clave" class="form-control">
             </div>
-            <button class="btn btn-success"  [disabled]="signupForm.invalid" type="submit">
-                <i class="fa-solid fa-circle-check fa-lg m-2"></i>
-                Registrase</button>
+            
         </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success"  [disabled]="signupForm.invalid" type="submit">
+            <i class="fa-solid fa-circle-check fa-lg m-2"></i>
+            Registrase</button>
+        <button type="button" class="btn btn-danger" (click)="activeModalService.close('Close click')">
+            <i class="fa-solid fa-circle-xmark fa-lg m-2"></i>
+            Close</button>
     </div>
 </div>

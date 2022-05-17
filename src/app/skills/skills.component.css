@@ -1,0 +1,99 @@
+*{
+  box-sizing: border-box;
+}
+
+.card {
+  border-radius: 0 0 30px 30px ;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+  background-color: #ffffff;
+  border-radius: 0 0 30px 30px ;
+
+  }  
+
+  .logos {
+    column-gap: 0.5em;
+    row-gap: 1em;
+    display:grid;
+    grid-template-rows: auto 2em auto auto 2em auto auto 2em auto auto; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 3em;
+  }
+
+  .card-tittle { 
+    grid-area: 1 / 1 / 2 /4;
+    padding-top: 0.7em;
+    padding-bottom: 30px;
+    padding-left: 1em;
+    font-family: helvetica, sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+    color: #599DA8;
+  }
+
+  .basic{ grid-area: 2 / 1 / 3 / 4;}
+  .frame{ grid-area: 5 / 1 / 6 / 4;}
+  .diseño{ grid-area: 2 / 4 / 3 / 7;}
+  .back{ grid-area: 5 / 4 / 6 / 7;}
+  .extra{ grid-area: 8 / 2 / 9 / 6;}
+
+  .grupo1{ 
+    grid-area: 3 / 1 / 5 / 4;;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+   }
+
+  .grupo2{ 
+    grid-area: 3  / 4 / 5 / 7;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    font-family: helvetica, sans-serif;
+   }
+
+  .grupo3{
+     grid-area: 6 / 1 / 8 / 4;
+     display: flex;
+     justify-content: space-around;
+     align-content: center; 
+    }
+
+  .grupo4{
+     grid-area: 6 / 4 / 8 / 7;
+     display: flex;
+     justify-content: space-around;
+     align-content: center;
+     }
+
+  .grupo5{ 
+    grid-area: 9 / 2 / 11 / 6;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+   }
+
+.btn{
+  margin: 0;
+}
+
+.icon{
+  max-width: 70px;
+}
+
+.icon:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+h5{
+  display:flex;
+  justify-content: center;
+  align-self: center;
+  padding: 1em;
+  font-size: 1.5em;
+  color: #888888;
+  font-style: italic;
+}
