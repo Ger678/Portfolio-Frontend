@@ -78,3 +78,11 @@ i{
 .info h5{
   color: #00909b;
 }
+
+.btn{
+  grid-area: 4 / 2 / 5 / 3;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

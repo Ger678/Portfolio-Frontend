@@ -1,8 +1,26 @@
+<div class="botonera">
 <button 
-    class="btn"
-    [ngStyle]="{'background-color':color, 'display':'none'}"
+    class="btn pencil"
     (click)="onClick()"
     >
-    <i class="fa fa-edit fa-lg"></i>
-    <span>Editar</span>
+    <i class="fa-solid fa-pencil "></i>
 </button>
+<button 
+    class="btn xmark"
+    (click)="onClick()"
+    >
+    <i class="fa-solid fa-xmark fa-lg"></i>
+</button>
+<button 
+    class="btn check"
+    (click)="onClick()"
+    >
+    <i class="fa-solid fa-check "></i>
+</button>
+<button 
+    class="btn plus"
+    (click)="onClick()"
+    >
+    <i class="fa-solid fa-plus fa-lg"></i>
+</button>
+</div>

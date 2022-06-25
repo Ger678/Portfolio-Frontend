@@ -1,19 +1,31 @@
 button{
-    border-radius: 2px 2px 25px 2px;
+    border-radius: 50%;
+    margin: 10px;
 }
 
-.btn :hover{
-    cursor: pointer;
-    background-color: #599DA8;
+.plus{
+    background-color: lightseagreen;
 }
-span{
-    padding: 5px;
-    margin-left: 5px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+
+.xmark{
+    background-color: lightcoral;
+}
+.pencil{
+    background-color: lightblue;
+}
+.check{
+    background-color: lightgreen;
+}
+
+button :hover{
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 i {
     color: white;
+}
+
+.botonera{
+    display: flex;
 }

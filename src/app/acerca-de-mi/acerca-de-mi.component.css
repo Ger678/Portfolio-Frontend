@@ -49,5 +49,10 @@
 }
 
 .btn{
+  grid-area: 3 / 2 / 4 / 3;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
