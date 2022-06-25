@@ -23,10 +23,10 @@ export class SkillsComponent implements OnInit {
 
   showDiv = false;
 
-  url: string = "";
-  title: string= "";
-  subtitle: string = "";
-  porcentaje: number = 0;
+  url: string = "\assets\img\icons\pequeños\HTML0.svg";
+  title: string= "HTML5";
+  subtitle: string = "Herramienta de trabajo";
+  porcentaje: number = 63;
 
 
 
@@ -50,6 +50,7 @@ export class SkillsComponent implements OnInit {
   }
 
   onModal(){
+    
     console.log("modal")
   }
 
