@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -6,21 +6,24 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './portada.component.html',
   styleUrls: ['./portada.component.css'],
   animations: [
-    trigger('entrada',[
-      state('out', style({translateX: '-100%'})),
-      state('in', style({translateX: '0%'})),
-      transition('out => in', animate('500ms ease-in')),
-      transition('in => out', animate('500ms ease-out'))
-     ])
-
+    trigger('inOut', [
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(500)
+      ]),
+      transition(':leave', [
+        animate(100, style({ transform: 'translateX(100%)' }))
+      ])
+    ])
   ]
 })
 export class PortadaComponent implements OnInit {
 
-  view = false;
+  showDiv : boolean = false;
 
-  toggle(){
-    this.view = !this.view;
+  toggle(event: any){
+    console.log(event)
+    this.showDiv = this.showDiv ? false : true;
   }
 
   constructor() { }
@@ -28,4 +31,16 @@ export class PortadaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollPosition / scrollHeight) * 100;
+    console.log(scrollPercentage)
+    if (scrollPercentage >= 4) {
+      this.showDiv = false;
+    } else {
+      this.showDiv = true;
+    }
+  }
 }

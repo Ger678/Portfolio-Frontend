@@ -1,4 +1,5 @@
-<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3">
+<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3" (scroll)="checkScroll()" *ngIf="showDiv" [@inOut]=" showDiv ? 'in' : 'out'">
+  <app-modal></app-modal>
   <div class="card">
     <h2 class="card-tittle">SKILLS</h2>
     <div class="logos">
@@ -9,7 +10,7 @@
           class="icon"
           src="\assets\img\icons\pequeños\HTML0.svg"
           alt="HTML5"
-        />
+          (click)="onModal()"/>
         <img class="icon" src="\assets\img\icons\pequeños\CSS0.svg" alt="CSS" />
         <img
           class="icon"

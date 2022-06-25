@@ -17,6 +17,7 @@ import { LoginComponent } from './accesorios/login/login.component'
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { PieComponent } from './pie/pie.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ModalComponent } from './accesorios/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SkillsComponent } from './skills/skills.component';
     LoginComponent,
     PieComponent,
     SkillsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

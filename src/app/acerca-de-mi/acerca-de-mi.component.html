@@ -1,4 +1,4 @@
-<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3">
+<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3" (scroll)="checkScroll()" *ngIf="showDiv" [@inOut]=" showDiv ? 'in' : 'out'">
   <div class= "card">
       <img class="icon" src="assets/img/icons/grandes/icon_ACERCA.svg" alt="acerca de mi"> 
       <h2 class= "card-tittle container-fluid">ACERCA DE MI</h2>
