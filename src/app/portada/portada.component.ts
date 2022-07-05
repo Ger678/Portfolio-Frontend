@@ -19,28 +19,16 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class PortadaComponent implements OnInit {
 
-  showDiv : boolean = false;
+  showPort : boolean = false;
 
   toggle(event: any){
     console.log(event)
-    this.showDiv = this.showDiv ? false : true;
+    this.showPort = this.showPort ? false : true;
   }
-
+ 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercentage = (scrollPosition / scrollHeight) * 100;
-    console.log(scrollPercentage)
-    if (scrollPercentage >= 4) {
-      this.showDiv = false;
-    } else {
-      this.showDiv = true;
-    }
-  }
 }

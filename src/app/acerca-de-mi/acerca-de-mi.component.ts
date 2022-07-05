@@ -6,7 +6,7 @@ import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.componen
   selector: 'app-acerca-de-mi',
   templateUrl: './acerca-de-mi.component.html',
   styleUrls: ['./acerca-de-mi.component.css'],
-  animations: [
+  /*animations: [
     trigger('inOut', [
       transition(':enter', [
         style({ transform: 'translateX(-100%)',
@@ -18,7 +18,7 @@ import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.componen
         opacity: 0 }))
       ])
     ])
-  ]
+  ]*/
 })
 export class AcercaDeMiComponent implements OnInit {
 
@@ -33,7 +33,7 @@ export class AcercaDeMiComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @HostListener('window:scroll', ['$event'])
+  /*@HostListener('window:scroll', ['$event'])
   checkScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -45,7 +45,7 @@ export class AcercaDeMiComponent implements OnInit {
     } else {
       this.showDiv = false;
     }
-  }
+  }*/
 
   duplicar( elemento: HTMLElement ){
     return elemento.cloneNode

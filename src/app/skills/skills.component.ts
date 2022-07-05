@@ -35,19 +35,7 @@ export class SkillsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercentage = (scrollPosition / scrollHeight) * 100;
-    console.log(scrollPercentage)
-    if (scrollPercentage >= 60) {
-      this.showDiv = true;
-      
-    } else {
-      this.showDiv = false;
-    }
-  }
+
 
   onModal(){
     

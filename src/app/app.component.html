@@ -1,15 +1,15 @@
 <body class="hero-image"  >
     <app-barra-navegacion></app-barra-navegacion>
-    <div class="container" >
-        <app-portada ></app-portada>
-        <app-acerca-de-mi></app-acerca-de-mi>
-        <app-experiencia></app-experiencia>
-        <app-educacion></app-educacion>
-        <app-skills></app-skills>
+    <div class="container">
+        <app-portada (scroll)="checkScroll()"   [@inOut]=" showPort ? 'in' : 'out'"></app-portada>
+        <app-acerca-de-mi (scroll)="checkScroll()"   [@inOut]=" showAcerca ? 'in' : 'out'"></app-acerca-de-mi>
+        <app-experiencia (scroll)="checkScroll()"   [@inOut]=" showExpe ? 'in' : 'out'"></app-experiencia>
+        <app-educacion (scroll)="checkScroll()"  [@inOut]=" showEdu ? 'in' : 'out'"></app-educacion>
+        <app-skills (scroll)="checkScroll()"  [@inOut]=" showSki ? 'in' : 'out'"></app-skills>
     </div>
     <div class="share">
      <i class="fa-solid fa-share-nodes fa-2xl"></i>
     </div>
-    <app-pie></app-pie>
+    <app-pie (scroll)="checkScroll()" *ngIf="showPie" [@inOut]=" showPie ? 'in' : 'out'"></app-pie>
 </body>
     
