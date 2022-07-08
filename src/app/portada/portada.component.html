@@ -1,19 +1,17 @@
 
 <div class="card"> <!--[@inOut]=" showDiv ? 'in' : 'out'"--> <!--class="card animate__animated animate__fadeInLeft"-->
-      <img class="portada" src="assets/img/fondo_ilustracion-fondo.svg" alt="Card image cap">
+      <img class="portada" src="{{portadaUrl}}" alt="Card image cap">
       <div class="iconos">
         <i class="fa-brands fa-instagram fa-xl"></i>
         <i class="fa-brands fa-facebook-f fa-xl"></i>
         <i class="fa-brands fa-discord fa-xl"></i>
       </div>
-      <img class="profile" src="assets/img/perfil.jpg" alt="Card image cap">
+      <img class="profile" src="{{perfilUrl}}" alt="Card image cap">
       <div class="titulo">
-        <h2 class= "title">GERMAN AGUIRRE</h2>
-        <h5 class= "subtitle">DESARROLLADOR WEB FULLSTACK</h5>
+        <h2 class= "title">{{titulo}}</h2>
+        <h5 class= "subtitle">{{subtitulo}}</h5>
       </div>
-      <h5 class="texto">Soy estudiante de programacion web en Argentina Programa. Soy una persona autodidactada, y
-        siempre que puedo intento aprender nuevas tecnologias. Estoy buscando formar parte de un proyecto 
-        que me permita proyectarme profesionalmente y dejar mi marcar en la web.
+      <h5 class="texto">{{contenido}}
       </h5>
       <boton-edit class="boton" color="#52ab98"></boton-edit>
 </div>

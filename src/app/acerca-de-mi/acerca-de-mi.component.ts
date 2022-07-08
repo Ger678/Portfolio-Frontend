@@ -26,7 +26,8 @@ export class AcercaDeMiComponent implements OnInit {
   mostrarVar = true;
   titulo : string = "ACERCA DE MI"
   contenido : string = "Estudio programación desde 2021 y soy un aficionado al diseño grafico. Me encuentro entusiasmado con las posibilidades que brinda la programación y siendo muy curioso con el alcancé que tiene la tecnología siento que puedo desarrollarme y crecer profesionalmente en la insdustria IT. Actualmente sigo estudiando y adquiriendo habilidades para encontrar el trabajo que busco en esta insdustria.";
-  botonera: any = BotonEditComponent; 
+  icono: string = "assets/img/icons/grandes/icon_ACERCA.svg";
+
 
   constructor() { }
 

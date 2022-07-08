@@ -21,7 +21,10 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class EducacionComponent implements OnInit {
 
+
   showDiv = false;
+  titulo : string = "EDUCACION";
+  lista: any = [];
 
   constructor() { }
 
@@ -30,3 +33,9 @@ export class EducacionComponent implements OnInit {
 
 
 }
+/*
+export interface Info { 
+  icono : any ="";
+  titulo : string =  "";
+  subtitulo : string = "";
+}*/

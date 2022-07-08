@@ -20,6 +20,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class ExperienciaComponent implements OnInit {
 
+  titulo: string = "EXPERIENCIA";
+  contenido : string = "Aprendiendo a programar desde hace 2 años.  Actividades y grupos: Desarrollamos 2 etapas. La primera #SeProgramar consistía en conocimiento de básico sobre programación, ejercicios prácticos y una visión inicial del POO. La segunda etapa #YoProgramo profundizamos conocimientos adquirimos habilidades y herramientas necesarias para convertirte en un programador web full-stack junior, también con un trabajo final integrador desarrollamos nuestro Portfolio web."
+  icono : string = "";
   constructor() { }
 
   ngOnInit(): void {
