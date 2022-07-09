@@ -1,6 +1,10 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
+import { Portada } from '../models/portada';
+import { PortadaService } from '../service/portada.service';
+import { HttpErrorResponse } from '@angular/common/http';
+
 @Component({
   selector: 'app-portada',
   templateUrl: './portada.component.html',
@@ -27,14 +31,33 @@ export class PortadaComponent implements OnInit {
   subtitulo: string = 'DESARROLLADOR WEB FULLSTACK';
   contenido: string = 'Soy estudiante de programacion web en Argentina Programa. Soy una persona autodidactada, y  siempre que puedo intento aprender nuevas tecnologias. Estoy buscando formar parte de un proyecto que me permita proyectarme profesionalmente y dejar mi marcar en la web.';
 
+  public port: Portada[]=[];
+  public editPort!: Portada;
+  public borrarPort!: Portada;
+
+  
   toggle(event: any){
     console.log(event)
     this.showPort = this.showPort ? false : true;
   }
  
-  constructor() { }
+  constructor(
+    private portService: PortadaService
+  ) { }
 
   ngOnInit(): void {
+    this.lista();
+  }
+
+  public lista(): void {
+    this.portService.lista().subscribe({
+      next: (response: Portada[]) => {
+        this.port = response;
+    },
+    error: (error: HttpErrorResponse) => {
+      alert (error.message);
+      }
+    });
   }
 
 }
