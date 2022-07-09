@@ -22,7 +22,8 @@ export class PortadaComponent implements OnInit {
   showPort : boolean = false;
   portadaUrl: string = 'assets/img/fondo_ilustracion-fondo.svg';
   perfilUrl: string = 'assets/img/perfil.jpg';
-  titulo: string = 'GERMAN AGUIRRE';
+  nombre: string = 'GERMAN';
+  apellido: string = 'AGUIRRE';
   subtitulo: string = 'DESARROLLADOR WEB FULLSTACK';
   contenido: string = 'Soy estudiante de programacion web en Argentina Programa. Soy una persona autodidactada, y  siempre que puedo intento aprender nuevas tecnologias. Estoy buscando formar parte de un proyecto que me permita proyectarme profesionalmente y dejar mi marcar en la web.';
 
