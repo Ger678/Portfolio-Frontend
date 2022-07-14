@@ -8,45 +8,67 @@
   background-color: #ffffff;
   border-radius: 0 0 30px 30px ;
 
+  display: grid;
+  column-gap: 1em;
+  grid-template-rows: 1fr auto auto; 
+  grid-template-columns: 0.4fr 6fr 2fr; 
+
   }  
 
-  .logos {
-    column-gap: 0.5em;
-    row-gap: 1em;
-    display:grid;
-    grid-template-rows: auto 2em auto auto 2em auto auto 2em auto auto; 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
-
-    padding-left: 5em;
-    padding-right: 5em;
-    padding-bottom: 3em;
-  }
-
-  .card-tittle { 
-    grid-area: 1 / 1 / 2 /4;
+.card-tittle { 
+    grid-area: 1 / 2 / 2 /3;
     padding-top: 0.7em;
     padding-bottom: 30px;
-    padding-left: 1em;
     font-family: helvetica, sans-serif;
     font-size: 4em;
     font-weight: bold;
     color: #599DA8;
   }
 
-  .basic{ grid-area: 2 / 1 / 3 / 4;}
-  .frame{ grid-area: 5 / 1 / 6 / 4;}
-  .diseño{ grid-area: 2 / 4 / 3 / 7;}
-  .back{ grid-area: 5 / 4 / 6 / 7;}
-  .extra{ grid-area: 8 / 2 / 9 / 6;}
+  #modal{
+    grid-area: 1 / 3 / 4 / 4;
+  }
 
-  .grupo1{ 
-    grid-area: 3 / 1 / 5 / 4;;
+  .iconos {
+/*     display:grid;
+    grid-template-rows: auto 2em auto auto 2em auto auto 2em auto auto; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;  */
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 2em;
+
     display: flex;
+    
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;  
+
+  }
+
+  .logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .imagen{
+    display: flex;
+    width:70px;
+    max-width: 70px;
+    padding:3px;
+  } 
+
+  .imagen:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+   .subtitulo{ 
+    display: flex;
+    align-self: center;
    }
 
-  .grupo2{ 
+  /* .grupo2{ 
     grid-area: 3  / 4 / 5 / 7;
     display: flex;
     justify-content: space-around;
@@ -73,20 +95,13 @@
     display: flex;
     justify-content: space-around;
     align-content: center;
-   }
+   } */
 
 .btn{
   margin: 0;
 }
 
-.icon{
-  max-width: 70px;
-}
 
-.icon:hover{
-  cursor: pointer;
-  transform: scale(1.2);
-}
 
 h5{
   display:flex;

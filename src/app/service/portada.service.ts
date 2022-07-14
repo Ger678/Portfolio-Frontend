@@ -8,7 +8,7 @@ import { Portada } from '../models/portada';
 })
 export class PortadaService {
 
-  portadaUrl = 'http://localhost:8180/portada/'
+  private portadaUrl = 'http://localhost:8180/portada/'
 
   constructor(private httpCLiente: HttpClient) { }
 

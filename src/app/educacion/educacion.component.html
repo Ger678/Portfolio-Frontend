@@ -84,37 +84,19 @@
           </g>
         </svg>
       </div>
-      <h2 class="card-tittle container-fluid">EDUCACION</h2>
+      <h2 class="card-tittle container-fluid">{{titulo}}</h2>
       <!-- <h5 class="card-text">Estudiante de Argentina Programa</h5> -->
-      <div id="info" >
-          <div class="Educ Educ-4">
-            <i class="fa-solid fa-code fa-2xl "></i>
-            <div class="info">
-              <h5>asdf</h5>
-              <p>asdfas</p>
+      <div id="info">
+        <div class="linea" *ngFor="let educ of educs" class="p-0 mt-3">
+          <div class="Educ">
+            <p class="itemId"> {{educ.itemId}}</p>
+            <i class={{educ.icono}}></i>
+            <div class="contenido">
+              <h5>{{educ.titulo}}</h5>
+              <p>{{educ.fecha}}</p>
             </div>
           </div>
-          <div class="Educ Educ-3">
-            <i class="fa-brands fa-git-alt fa-2xl"></i>
-            <div class="info">
-              <h5>Todo Code Academi</h5>
-              <p>mar. 2003 - nov. 2007</p>
-            </div>
-          </div>
-          <div class="Educ Educ-2">
-            <i class="fa-solid fa-book fa-2xl"></i>
-            <div class="info">
-              <h5>Escuela de Educación Tecnica N° 3106</h5>
-              <p>mar. 2008 - dic. 2013</p>
-            </div>
-          </div>
-          <div class="Educ Educ-1">
-            <i class="fa-solid fa-school-flag fa-2xl"></i>
-            <div class="info">
-              <h5>Escuela Bartolome Mitre</h5>
-              <p>mar. 2003 - nov. 2007</p>
-            </div>
-          </div>
+        </div>
       </div>
       <boton-edit class="btn" color="#52ab98"></boton-edit>
     </div>

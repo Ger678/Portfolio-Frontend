@@ -1,11 +1,11 @@
 <div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3" >
 <!-- (scroll)="checkScroll()" *ngIf="showDiv" [@inOut]=" showDiv ? 'in' : 'out'" -->
 
-  <div class= "card">
-      <img class="icon" src="{{icono}}" alt="acerca de mi"> 
-      <h2 class= "card-tittle container-fluid" (click)="onClick()">{{titulo}}</h2>
+  <div class= "card" *ngFor="let acerca of acercas">
+      <img class="icon" src={{acerca.icono}} alt="acerca de mi"> 
+      <h2 class= "card-tittle container-fluid" (click)="onClick()">{{acerca.titulo}}</h2>
       <h5 class= "card-text" >
-        {{contenido}}
+        {{acerca.contenido}}
       </h5>      
 
   </div>    

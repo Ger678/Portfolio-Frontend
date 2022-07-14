@@ -1,84 +1,16 @@
-<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3"><!-- (scroll)="checkScroll()" *ngIf="showDiv" [@inOut]=" showDiv ? 'in' : 'out'"-->
-  <app-modal> app del modal</app-modal>
+<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3">
+  <!-- (scroll)="checkScroll()" *ngIf="showDiv" [@inOut]=" showDiv ? 'in' : 'out'"-->
   <div class="card">
-    <h2 class="card-tittle">SKILLS</h2>
-    <div class="logos">
-      <!-- Skills basics -->
-      <h5 class="basic">Basics</h5>
-      <div class="grupo1">
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\HTML0.svg"
-          alt="HTML5"
-          (click)="onModal()"/>
-        <img class="icon" src="\assets\img\icons\pequeños\CSS0.svg" alt="CSS" />
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\JS0.svg"
-          alt="JAVASCRIPT"
-        />
-      </div>
-
-      <!-- Frameworks -->
-      <h5 class="frame">Frameworks</h5>
-      <div class="grupo3">
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\ANGULAR0.svg"
-          alt="ANGULAR"
-        />
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\BOOT0.svg"
-          alt="BOOTSTRAP"
-        />
-      </div>
-
-      <!-- Diseño -->
-      <h5 class="diseño">Diseño</h5>
-      <div class="grupo2">
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\PHOTOSHOP0.svg"
-          alt="PHOTOSHOP"
-        />
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\ILLUSTRATOR0.svg"
-          alt="ILLUSTRATOR"
-        />
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\XD0.svg"
-          alt="ADOBE XD"
-        />
-      </div>
-
-      <!-- Backend -->
-      <h5 class="back">Backend</h5>
-      <div class="grupo4">
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\MYSQL0.svg"
-          alt="MYSQL"
-        />
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\JAVA0.svg"
-          alt="JAVA"
-        />
-      </div>
-
-      <!-- Extra -->
-      <h5 class="extra">Extra</h5>
-      <div class="grupo5">
-        <img class="icon" src="\assets\img\icons\pequeños\GIT0.svg" alt="GIT" />
-        <img
-          class="icon"
-          src="\assets\img\icons\pequeños\GITHUB0.svg"
-          alt="GITHUB"
-        />
+    <h2 class="card-tittle">{{titulo}}</h2>
+    <div class="iconos">
+      <div class="logos" *ngFor="let skill of skills">
+        <img class="imagen " 
+          src={{skill.icono}} 
+          alt={{skill.id}} 
+          (click)="onModal(skill.id)"
+           />
       </div>
     </div>
+    <app-modal id="modal" ></app-modal>
   </div>
 </div>

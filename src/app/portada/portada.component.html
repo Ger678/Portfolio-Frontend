@@ -1,17 +1,17 @@
 
-<div class="card"> <!--[@inOut]=" showDiv ? 'in' : 'out'"--> <!--class="card animate__animated animate__fadeInLeft"-->
-      <img class="portada" src="{{portadaUrl}}" alt="Card image cap">
+<div class="card" *ngFor="let port of ports"> <!--[@inOut]=" showDiv ? 'in' : 'out'"--> <!--class="card animate__animated animate__fadeInLeft"-->
+      <img class="portada" src={{port.portadaUrl}} alt="Card image cap">
       <div class="iconos">
         <i class="fa-brands fa-instagram fa-xl"></i>
         <i class="fa-brands fa-facebook-f fa-xl"></i>
         <i class="fa-brands fa-discord fa-xl"></i>
       </div>
-      <img class="profile" src="{{perfilUrl}}" alt="Card image cap">
+      <img class="profile" src={{port.perfilUrl}} alt="Card image cap">
       <div class="titulo">
-        <h2 class= "title">{{nombre}} {{apellido}}</h2>
-        <h5 class= "subtitle">{{subtitulo}}</h5>
-      </div>
-      <h5 class="texto">{{contenido}}
+        <h2 class= "title">{{port.nombre }} {{port.apellido}}</h2>
+        <h5 class= "subtitle">DESARROLLADOR WEB FULL STACK</h5>
+      <!-- </div> -->
+      <h5 class="texto">{{port.contenido}}
       </h5>
       <boton-edit class="boton" color="#52ab98"></boton-edit>
 </div>

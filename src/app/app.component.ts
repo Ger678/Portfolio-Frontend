@@ -21,7 +21,6 @@ export class AppComponent {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrollPercentage = (scrollPosition / scrollHeight) * 100;
-    console.log(scrollPercentage + "1")
     if (scrollPercentage >= 1) {
       this.showPort = true;      
     }

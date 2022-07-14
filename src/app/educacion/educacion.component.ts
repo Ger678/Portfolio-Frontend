@@ -1,34 +1,37 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Educacion } from '../models/educacion';
+import { EducacionService } from '../service/educacion.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css'],
-  animations: [
-    trigger('inOut', [
-      transition(':enter', [
-        style({ transform: 'translateX(-100%)',
-        opacity: 1 }),
-        animate(700)
-      ]),
-      transition(':leave', [
-        animate(100, style({ transform: 'translateX(100%)',
-        opacity: 0 }))
-      ])
-    ])
-  ]
+  
 })
 export class EducacionComponent implements OnInit {
 
 
-  showDiv = false;
-  titulo : string = "EDUCACION";
-  lista: any = [];
+  titulo : string = "EDUCACION"; 
 
-  constructor() { }
+  public educs : Educacion[] = [];
+
+  constructor( private educService : EducacionService) { }
 
   ngOnInit(): void {
+    this.getEduc();
+  }
+
+  getEduc(): void {
+    this.educService.getEduc().subscribe(
+     data => {
+       this.educs = data;
+     },
+     error => {
+       console.log(error);
+     }
+   );
   }
 
 

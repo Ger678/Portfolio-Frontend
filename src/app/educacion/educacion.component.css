@@ -55,14 +55,26 @@ i{
   flex-direction: column;
 }
 
+.itemId{
+  display: flex;
+  justify-self: center;
+  margin-bottom: 0;
+  padding-right: 0.5em;
+  align-self: center;
+  color: #d0d0d0;
+  font-size: 2.7em;
+  font-weight: bold;
+  font-family: helvetica, sans-serif;
+}
+
 .Educ{
   display: flex;
   flex-direction: row;
-  padding-left: 40px;
+  padding-left: 20px;
 
 }
 
-.info{
+.contenido{
   padding-left: 15px;
   padding-top: 20px;
   display: flex;
@@ -75,8 +87,9 @@ i{
   font: helvetica, arial, helvetica;
 }
 
-.info h5{
+.contenido h5{
   color: #00909b;
+  font-weight: bold;
 }
 
 .btn{

@@ -1,5 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { SkillsService } from '../service/skills.service';
+import { Skills } from '../models/skills';
 
 @Component({
   selector: 'app-skills',
@@ -23,25 +25,42 @@ export class SkillsComponent implements OnInit {
 
   showDiv = false;
 
-  url: string = "\assets\img\icons\pequeños\HTML0.svg";
-  title: string= "HTML5";
-  subtitle: string = "Herramienta de trabajo";
-  porcentaje: number = 63;
+  titulo: string= "HABILIDADES";
+  idClick: number = 1;
+
+
+  public skills: Skills [] = [];
 
 
 
-  constructor() { }
+  constructor(private skService: SkillsService) { }
 
   ngOnInit(): void {
+    this.listaSkills();
   }
 
-
-
-  onModal(){
-    
-    console.log("modal")
+  public listaSkills(): void {
+    this.skService.getSkills().subscribe(
+      data => {
+        this.skills = data;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
+
+  onModal(id:number) : void {
+
+    this.idClick=id;
+    console.log(id);
+  }
+
 
 
 
 }
+function input() {
+  throw new Error('Function not implemented.');
+}
+

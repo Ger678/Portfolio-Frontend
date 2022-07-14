@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input } from '@angular/core';
+import { Skills } from 'src/app/models/skills';
+import { SkillsService } from 'src/app/service/skills.service';
 
 @Component({
   selector: 'app-modal',
@@ -8,26 +9,28 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalComponent implements OnInit {
 
-  @Input() url: string= " ";
-  @Input() title: string = " ";
-  @Input() subtitle: string = " ";
-  @Input() porcentaje: number= 0
+  /* skill: Skills[] = []; */
 
-  @Output() onModal = new EventEmitter();
+  @Input() idClick: number = 1;
 
-  constructor( public activeModal : NgbModal,
-    ) { }
+
+
+  constructor(
+        private skService: SkillsService) { }
 
   ngOnInit(): void {
+/*     this.getSkill(); */
   }
 
-   openModal(url: string, title: string, subtitle: string, porcentaje: number): void {
-    this.url = url;
-    this.title = title;
-    this.subtitle = subtitle;
-    this.porcentaje = porcentaje;
-    this.onModal.emit();
-  }
-
+  public getSkill():void {
+    /* this.skService.getById(this.idClick).subscribe(
+      data => {
+        this.skill = data;
+      },
+      error => {
+        console.log(error)
+      }
+    );
+  } */
 
 }
