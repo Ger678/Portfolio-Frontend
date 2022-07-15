@@ -7,10 +7,15 @@
         <img class="imagen " 
           src={{skill.icono}} 
           alt={{skill.id}} 
-          (click)="onModal(skill.id)"
+          (click)="onModal(skill.id, skill.icono, skill.nombre, skill.descripcion, skill.fotos, skill.porcentaje)"
            />
       </div>
     </div>
-    <app-modal id="modal" ></app-modal>
+    <app-modal id="modal" [itemId]="idClick"
+               [icono]="SIcono"
+               [nombre]="SNombre"
+               [descripcion]="SDescripcion"
+               [fotos]="SFotos"
+               [porcentaje]="SPorcentaje"></app-modal>
   </div>
 </div>

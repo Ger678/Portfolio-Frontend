@@ -1,3 +1,29 @@
-div{
-    background-color: aqua;
+.tarjeta{
+    border-left: 5px solid grey;
+    padding-bottom: 5em;
+
+    display : grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+}
+
+.img{
+    grid-area: 2/3/3/4;
+}
+
+.nombre{
+    grid-area: 2/2/3/3;
+}
+
+.conte{
+    grid-area: 3/2/4/3;
+    font-size: small;
+}
+
+.fotos{
+    grid-area: 4/3/5/4;
+}
+
+.progress{
+    grid-area: 5/2/6/4;
 }

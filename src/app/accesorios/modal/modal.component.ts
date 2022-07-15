@@ -9,21 +9,30 @@ import { SkillsService } from 'src/app/service/skills.service';
 })
 export class ModalComponent implements OnInit {
 
-  /* skill: Skills[] = []; */
+  public skill!: Skills;
 
-  @Input() idClick: number = 1;
-
-
+  @Input() itemId: number = 1;
+  @Input() icono!: string;
+  @Input() nombre!: string;
+  @Input() descripcion!: string;
+  @Input() fotos!: string;
+  @Input() porcentaje!: number;
+  numero: number = this.itemId;
 
   constructor(
-        private skService: SkillsService) { }
+        private skService: SkillsService,
+        ) {
+         }
 
   ngOnInit(): void {
-/*     this.getSkill(); */
+  }
+
+  comentarID(): void {
+    console.log(" funciona " + this.itemId);
   }
 
   public getSkill():void {
-    /* this.skService.getById(this.idClick).subscribe(
+      this.skService.getById(this.itemId).subscribe(
       data => {
         this.skill = data;
       },
@@ -31,6 +40,6 @@ export class ModalComponent implements OnInit {
         console.log(error)
       }
     );
-  } */
+  }
 
 }

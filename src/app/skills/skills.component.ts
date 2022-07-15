@@ -27,6 +27,11 @@ export class SkillsComponent implements OnInit {
 
   titulo: string= "HABILIDADES";
   idClick: number = 1;
+  SIcono!: string;
+  SNombre!: string;
+  SDescripcion!: string;
+  SFotos!: string;
+  SPorcentaje!: number;
 
 
   public skills: Skills [] = [];
@@ -50,10 +55,15 @@ export class SkillsComponent implements OnInit {
     );
   }
 
-  onModal(id:number) : void {
-
+  onModal(id:number, icono: string, nombre:string, 
+          descripcion: string, fotos: string, porcentaje: number) : void {
+   
     this.idClick=id;
-    console.log(id);
+    this.SIcono = icono;
+    this.SNombre = nombre;
+    this.SDescripcion = descripcion;
+    this.SFotos= fotos;
+    this.SPorcentaje =porcentaje;
   }
 
 
