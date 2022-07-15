@@ -27,6 +27,7 @@
 
   #modal{
     grid-area: 2 / 3 / 3 / 4;
+    margin: 0.7em;
   }
 
   .iconos {
