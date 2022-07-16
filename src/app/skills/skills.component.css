@@ -27,7 +27,7 @@
 
   #modal{
     grid-area: 2 / 3 / 3 / 4;
-    margin: 0.7em;
+    margin: 1em;
   }
 
   .iconos {
@@ -57,6 +57,7 @@
     width:70px;
     max-width: 70px;
     padding:3px;
+    margin: 20px;
   } 
 
   .imagen:hover{

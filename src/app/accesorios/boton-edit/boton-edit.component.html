@@ -1,26 +1,27 @@
-<div class="botonera">
-<button 
-    class="btn pencil"
-    (click)="onClick()"
-    >
-    <i class="fa-solid fa-pencil "></i>
-</button>
-<button 
-    class="btn xmark"
-    (click)="onClick()"
-    >
-    <i class="fa-solid fa-xmark fa-lg"></i>
-</button>
-<button 
-    class="btn check"
-    (click)="onClick()"
-    >
-    <i class="fa-solid fa-check "></i>
-</button>
-<button 
-    class="btn plus"
-    (click)="onClick()"
-    >
-    <i class="fa-solid fa-plus fa-lg"></i>
-</button>
+<div class="">
+    <h3>{{id}}</h3>
+    <h3>{{object}}</h3>
+</div>
+<div class=" menu container">
+    
+    <div class="botonera" *ngIf="mostrarDiv">
+        <button class="btn btn-lg exit" (click)="onExit()">
+            <i class="fa-solid fa-xmark fa-lg"></i>
+        </button>
+        <button class="btn btn-lg pencil" (click)="onEditar()" (click)="mostrarOpciones()">
+            <i class="fa-solid fa-pencil "></i>
+        </button>
+        <button class="btn btn-lg xmark" (click)="onBorrar()" *ngIf="mostrarEditar">
+            <i class="fa-solid fa-circle-minus"></i>
+        </button>
+        <button class="btn btn-lg check" (click)="onGuardar()" *ngIf="mostrarEditar">
+            <i class="fa-solid fa-check "></i>
+        </button>
+        <button class="btn btn-lg plus" (click)="onAgregar()" *ngIf="mostrarEditar">
+            <i class="fa-solid fa-plus fa-lg"></i>
+        </button>
+    </div>
+    <button class="btn btn-lg share">
+        <i class="fa-solid fa-share-nodes fa-lg"></i>
+    </button>
 </div>

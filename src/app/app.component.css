@@ -6,16 +6,6 @@ div{
     padding: 20px;
 }
 
-.share{
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    padding: 15px;
-    border-radius: 50%;
-    background-color: #e4e4e4;
-    box-shadow: 0 0 10px gray;
-}
-
 i{
     color: #599DA8;
 }

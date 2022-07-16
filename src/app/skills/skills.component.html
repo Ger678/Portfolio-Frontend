@@ -8,6 +8,7 @@
           src={{skill.icono}} 
           alt={{skill.id}} 
           (click)="onModal(skill.id, skill.icono, skill.nombre, skill.descripcion, skill.fotos, skill.porcentaje)"
+          (click)="mostrarInfo()"
            />
       </div>
     </div>
@@ -16,6 +17,7 @@
                [nombre]="SNombre"
                [descripcion]="SDescripcion"
                [fotos]="SFotos"
-               [porcentaje]="SPorcentaje"></app-modal>
+               [porcentaje]="SPorcentaje"
+               [showDiv]="show"></app-modal>
   </div>
 </div>

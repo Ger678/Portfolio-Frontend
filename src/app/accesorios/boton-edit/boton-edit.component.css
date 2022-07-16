@@ -3,18 +3,43 @@ button{
     margin: 10px;
 }
 
+.menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.share{
+    /* bottom: 25px;
+    left: 25px; */
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
+}
+
+.share i {
+    color : #599DA8
+}
+
+.exit{
+    background-color: lightgray;
+    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
+}
+
 .plus{
     background-color: lightseagreen;
+    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
 }
 
 .xmark{
     background-color: lightcoral;
+    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
 }
 .pencil{
     background-color: lightblue;
+    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
 }
 .check{
     background-color: lightgreen;
+    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
 }
 
 button :hover{
@@ -22,10 +47,11 @@ button :hover{
     transform: scale(1.2);
 }
 
-i {
+.botonera i {
     color: white;
 }
 
 .botonera{
     display: flex;
+    flex-direction:column;
 }

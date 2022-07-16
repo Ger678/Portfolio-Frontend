@@ -23,15 +23,15 @@ import { Skills } from '../models/skills';
 })
 export class SkillsComponent implements OnInit {
 
-  showDiv = false;
 
   titulo: string= "HABILIDADES";
   idClick: number = 1;
   SIcono!: string;
-  SNombre!: string;
-  SDescripcion!: string;
+  SNombre: string= "HTML";
+  SDescripcion: string = "Lorem ipsum dolor sit amet, consectet, sed do eiusmod tempor incididunt ut labore et d";
   SFotos!: string;
-  SPorcentaje!: number;
+  SPorcentaje: number= 19;
+  show!: boolean;
 
 
   public skills: Skills [] = [];
@@ -66,11 +66,10 @@ export class SkillsComponent implements OnInit {
     this.SPorcentaje =porcentaje;
   }
 
-
-
+  mostrarInfo() {
+    this.show = true;
+  }
 
 }
-function input() {
-  throw new Error('Function not implemented.');
-}
+
 

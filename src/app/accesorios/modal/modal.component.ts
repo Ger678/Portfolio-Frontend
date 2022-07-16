@@ -17,19 +17,17 @@ export class ModalComponent implements OnInit {
   @Input() descripcion!: string;
   @Input() fotos!: string;
   @Input() porcentaje!: number;
+  @Input() showDiv: boolean= false;
   numero: number = this.itemId;
 
   constructor(
-        private skService: SkillsService,
-        ) {
+        private skService: SkillsService) {
          }
 
   ngOnInit(): void {
   }
 
-  comentarID(): void {
-    console.log(" funciona " + this.itemId);
-  }
+
 
   public getSkill():void {
       this.skService.getById(this.itemId).subscribe(
