@@ -4,6 +4,8 @@ import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.componen
 import { Acerca } from '../models/acerca';
 import { AcercaService } from '../service/acerca.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { BotonesService } from '../service/botones.service';
+import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'app-acerca-de-mi',
@@ -31,13 +33,30 @@ export class AcercaDeMiComponent implements OnInit {
   public acercas : Acerca [] = [];
   public editAcerca!: Acerca;
   public borrarAcerca!: Acerca;
+  id :number = 2;
+  tittle!: string;
+  contenido!: string;
+  icono!: string;
+  object: Acerca =new Acerca(this.id, this.tittle, this.contenido, this.icono) ;
+  mostrar!: boolean;
+  titulo: string = "acerca";
+  mostrarDiv!: boolean ;
 
   constructor(
-    private acercaService: AcercaService
+    private acercaService: AcercaService,
+    private btnService: BotonesService,
   ) { }
 
   ngOnInit(): void {
     this.getAcercas();
+   }
+
+  mostrarBtn(id: number):any{
+    this.mostrar = true;
+    this.btnService.sendBtn(this.mostrar);
+    this.btnService.sendId(id);
+    this.btnService.sendNombre(this.titulo);
+    this.btnService.sendObject(this.object);
   }
 
   getAcercas(): void {
@@ -51,11 +70,26 @@ export class AcercaDeMiComponent implements OnInit {
    );
   }
 
-
-  duplicar( elemento: HTMLElement ){
-    return elemento.cloneNode
+  editarModel(){
+      this.btnService.mostrarEditar(this.id, this.titulo).subscribe((d)=>{
+      this.mostrarDiv = d;      
+      console.log("acerca works");
+    });
+    console.log(this.mostrarDiv);
   }
 
+  update(){
+    
+  }
+
+  crear(): void{
+    const acerca = new Acerca(this.id, this.titulo, this.contenido, this.icono);
+    this.acercaService.save(acerca).subscribe();
+  }
+
+  cerrar(){
+    this.mostrarDiv = false;
+  }
 
   onClick(){
     console.log("funciona")

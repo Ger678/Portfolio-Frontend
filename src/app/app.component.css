@@ -9,3 +9,8 @@ div{
 i{
     color: #599DA8;
 }
+
+.boton{
+    position: fixed;
+    bottom: 50px;
+}

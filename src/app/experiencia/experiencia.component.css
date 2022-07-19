@@ -63,3 +63,41 @@ svg {
   justify-content: center;
   align-items: center;
 }
+
+@keyframes abrir {
+  0% {
+    transform: scale(0.4);
+    transform: translatez(-5);
+  }
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.4);
+  }
+}
+
+@keyframes luz1 {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: scale(0.999); opacity: 0.2;
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: scale(1);opacity: 5;
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: scale(0.999);opacity: 0.2;
+  }
+}
+
+#luz{
+  animation: luz1 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+#POPUP{
+  animation: abrir 6s ease-in-out infinite;
+}

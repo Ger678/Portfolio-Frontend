@@ -6,6 +6,7 @@ import { PortadaService } from '../service/portada.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BotonesService } from '../service/botones.service';
 import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-portada',
@@ -28,21 +29,30 @@ export class PortadaComponent implements OnInit {
   mostrar!: boolean;
   
   public ports: Portada [] = [];
-  portadaId!: number;
-  nombre: string = "portada";
+  portadaId: number = 1;
+  titulo: string = "portada";
+  nombre!: string;
+  subtitulo!: string;
+  perfilUrl!: string;
+  portadaUrl!: string;
+  contenido!: string;
+  btn!: BotonEditComponent;
+  editar!: boolean;
+  nuevo!: boolean;
 
-
-  dato: any ="sin datos";
-  
+  object: Portada = new Portada(this.portadaId, this.nombre, this.subtitulo, this.perfilUrl,
+     this.portadaUrl, this.contenido);
  
   constructor(
     private portService: PortadaService,
     private btnService: BotonesService,
-    private btn: BotonEditComponent
+    private router: Router,
+
   ) { }
 
   ngOnInit(): void {
     this.lista();
+
   }
 
   lista(): void {
@@ -55,11 +65,14 @@ export class PortadaComponent implements OnInit {
      }
    );
   }
+
   
-  mostrarBtn(id: number){
+  mostrarBtn(id: number):any{
     this.mostrar = true;
-    this.portadaId = id;
-    console.log("works")
+    this.btnService.sendBtn(this.mostrar);
+    this.btnService.sendId(id);
+    this.btnService.sendNombre(this.titulo);
+    this.btnService.sendObject(this.object);
   }
 
   cambiarMostrar(e: any){
@@ -67,11 +80,29 @@ export class PortadaComponent implements OnInit {
     console.log(e);
   }
 
-  borrarPort(portadaId: number, nombre: string){    
-    if( this.btn.onBorrar() == (this.btnService.url + nombre + "/borrar/" + portadaId)){
-     /*  return this.btnService.delete(portadaId, nombre).subscribe(); */
-     console.log(this.btnService.url + nombre + "/borrar/" + portadaId)
-    };    
+  nuevaPortada(){
+    this.btnService.recibeAgregar().subscribe((d)=>{
+      this.nuevo = d;
+    });
+    this.lista();
   }
 
+  cancelar(){
+    this.editar = false;
+    this.nuevo = false;
+  }
+
+  editarModel(){
+    this.btnService.mostrarEditar(this.portadaId, this.titulo).subscribe((d)=>{
+      this.editar = d;
+      console.log("portada works");
+    });
+  }
+
+  crear(): void{
+    const portada = new Portada(this.portadaId, this.nombre, this.subtitulo,
+      this.perfilUrl, this.portadaUrl, this.contenido);
+    this.portService.save(portada).subscribe();
+    this.router.navigate(['/'])
+  }
 }

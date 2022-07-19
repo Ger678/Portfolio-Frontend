@@ -1,6 +1,6 @@
 <div class="">
     <h3>{{id}}</h3>
-    <h3>{{object}}</h3>
+    <h3>{{name}}</h3>
 </div>
 <div class=" menu container">
     
@@ -11,13 +11,13 @@
         <button class="btn btn-lg pencil" (click)="onEditar()" (click)="mostrarOpciones()">
             <i class="fa-solid fa-pencil "></i>
         </button>
-        <button class="btn btn-lg xmark" (click)="onBorrar()" *ngIf="mostrarEditar">
+        <button class="btn btn-lg xmark" (click)="onBorrar()" >
             <i class="fa-solid fa-circle-minus"></i>
         </button>
-        <button class="btn btn-lg check" (click)="onGuardar()" *ngIf="mostrarEditar">
+        <button class="btn btn-lg check" (click)="onGuardar()" >
             <i class="fa-solid fa-check "></i>
         </button>
-        <button class="btn btn-lg plus" (click)="onAgregar()" *ngIf="mostrarEditar">
+        <button class="btn btn-lg plus" (click)="onAgregar()" >
             <i class="fa-solid fa-plus fa-lg"></i>
         </button>
     </div>

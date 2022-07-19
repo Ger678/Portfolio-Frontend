@@ -1,13 +1,152 @@
-<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3" >
-<!-- (scroll)="checkScroll()" *ngIf="showDiv" [@inOut]=" showDiv ? 'in' : 'out'" -->
+<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3">
+  <div class="card" *ngFor="let acerca of acercas">
+    <div class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
+        <defs>
+          <style>
+            .aa71c51c-9c07-4177-85b9-1102110ddb5c {
+              isolation: isolate;
+            }
 
-  <div class= "card" *ngFor="let acerca of acercas">
-      <img class="icon" src={{acerca.icono}} alt="acerca de mi"> 
-      <h2 class= "card-tittle container-fluid" (click)="onClick()">{{acerca.titulo}}</h2>
-      <h5 class= "card-text" >
-        {{acerca.contenido}}
-      </h5>      
+            .a3c232a1-2908-4e26-b1d3-2e64dde44d6a {
+              fill: #6eafb5;
+            }
 
-  </div>    
-  
-</div>     
+            .b4cf6ede-786c-4176-9922-c4ee25407d6d {
+              fill: #8de1e8;
+            }
+
+            .a304cc8c-0d47-442b-b321-a799d4417399 {
+              fill: #fff;
+            }
+
+            .f5a1f1b3-6cb7-40a2-bab8-eaad66eb4262 {
+              fill: #00929d;
+            }
+
+            .aa3b8ec4-1385-48a8-a316-0d62090c4a73 {
+              opacity: 0.71;
+              mix-blend-mode: luminosity;
+            }
+
+            .be68a197-ddeb-4c6e-a898-62b44ab788a7 {
+              fill: url(#b7e2e17e-e70b-44de-93ef-5382a89d54b3);
+            }
+
+            .feeb2d33-9a9d-4814-8439-a5a1371988e3 {
+              fill: url(#b369a3ad-2c6d-4790-bb1f-53d01aa16c65);
+            }
+
+            .e1c1db34-90ca-4cd3-8ce5-2b036d5f38f0 {
+              fill: url(#e3097864-7427-487b-8de5-67db2d59974b);
+            }
+          </style>
+          <linearGradient id="b7e2e17e-e70b-44de-93ef-5382a89d54b3" x1="102" y1="97.25" x2="102" y2="76"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="aqua" />
+            <stop offset="0.1" stop-color="#05ffff" stop-opacity="0.98" />
+            <stop offset="0.22" stop-color="#15ffff" stop-opacity="0.92" />
+            <stop offset="0.36" stop-color="#2effff" stop-opacity="0.82" />
+            <stop offset="0.51" stop-color="#51ffff" stop-opacity="0.68" />
+            <stop offset="0.66" stop-color="#7effff" stop-opacity="0.5" />
+            <stop offset="0.82" stop-color="#b6ffff" stop-opacity="0.29" />
+            <stop offset="0.98" stop-color="#f6ffff" stop-opacity="0.04" />
+            <stop offset="1" stop-color="#fff" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="b369a3ad-2c6d-4790-bb1f-53d01aa16c65" x1="66" y1="114.63" x2="87.13" y2="114.63"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff" stop-opacity="0" />
+            <stop offset="0.02" stop-color="#f6ffff" stop-opacity="0.04" />
+            <stop offset="0.18" stop-color="#b6ffff" stop-opacity="0.29" />
+            <stop offset="0.34" stop-color="#7effff" stop-opacity="0.5" />
+            <stop offset="0.49" stop-color="#51ffff" stop-opacity="0.68" />
+            <stop offset="0.64" stop-color="#2effff" stop-opacity="0.82" />
+            <stop offset="0.78" stop-color="#15ffff" stop-opacity="0.92" />
+            <stop offset="0.9" stop-color="#05ffff" stop-opacity="0.98" />
+            <stop offset="1" stop-color="aqua" />
+          </linearGradient>
+          <linearGradient id="e3097864-7427-487b-8de5-67db2d59974b" x1="117.38" y1="121" x2="138" y2="121"
+            xlink:href="#b7e2e17e-e70b-44de-93ef-5382a89d54b3" />
+        </defs>
+        <title>icon</title>
+        <g class="aa71c51c-9c07-4177-85b9-1102110ddb5c">
+          <g id="a610b85b-e0be-4a34-8ab5-4f1d6c4684ce" data-name="ACERCA">
+            <g id="ff374e8c-cf9a-4366-bfb8-99ca707962b7" data-name="MENSAJE">
+              <g id="corazon2" data-name="2">
+                <path class="a3c232a1-2908-4e26-b1d3-2e64dde44d6a"
+                  d="M176.24,41.17H158.19a6.75,6.75,0,0,0-6.75,6.75V56a6.75,6.75,0,0,0,6.75,6.75h3.49a1.09,1.09,0,0,1,.78.33l4,4a1.1,1.1,0,0,0,1.56,0l4-4a1.07,1.07,0,0,1,.78-.33h3.48A6.75,6.75,0,0,0,183,56V47.92A6.75,6.75,0,0,0,176.24,41.17Z" />
+                <path class="b4cf6ede-786c-4176-9922-c4ee25407d6d"
+                  d="M175.81,39H157.76A6.75,6.75,0,0,0,151,45.76v8.11a6.76,6.76,0,0,0,6.76,6.76h3.48A1.06,1.06,0,0,1,162,61l4,4a1.09,1.09,0,0,0,1.56,0l4-4a1.08,1.08,0,0,1,.78-.32h3.49a6.76,6.76,0,0,0,6.75-6.76V45.76A6.75,6.75,0,0,0,175.81,39Z" />
+                <path class="a304cc8c-0d47-442b-b321-a799d4417399"
+                  d="M170,46.6a3.8,3.8,0,0,0-3.21,1.76,3.8,3.8,0,0,0-7,2c0,3,7,6.81,7,6.81s7-4,7-6.81A3.8,3.8,0,0,0,170,46.6Z" />
+              </g>
+              <g id="corazon1" data-name="1">
+                <path class="a3c232a1-2908-4e26-b1d3-2e64dde44d6a"
+                  d="M44.24,13.17h-18a6.75,6.75,0,0,0-6.75,6.75V28a6.75,6.75,0,0,0,6.75,6.75h3.49a1.09,1.09,0,0,1,.78.33l4,4a1.1,1.1,0,0,0,1.56,0l4-4a1.07,1.07,0,0,1,.78-.33h3.48A6.75,6.75,0,0,0,51,28V19.92A6.75,6.75,0,0,0,44.24,13.17Z" />
+                <path class="b4cf6ede-786c-4176-9922-c4ee25407d6d"
+                  d="M43.81,11h-18A6.75,6.75,0,0,0,19,17.76v8.11a6.76,6.76,0,0,0,6.76,6.76h3.48A1.06,1.06,0,0,1,30,33l4,4a1.09,1.09,0,0,0,1.56,0l4-4a1.08,1.08,0,0,1,.78-.32h3.49a6.76,6.76,0,0,0,6.75-6.76V17.76A6.75,6.75,0,0,0,43.81,11Z" />
+                <path class="a304cc8c-0d47-442b-b321-a799d4417399"
+                  d="M38,18.6a3.8,3.8,0,0,0-3.21,1.76,3.8,3.8,0,0,0-7,2.05c0,3,7,6.81,7,6.81s7-4,7-6.81A3.8,3.8,0,0,0,38,18.6Z" />
+              </g>
+            </g>
+            <path id="b321747a-ca76-4e21-99df-499ade3547f9" data-name="man" class="f5a1f1b3-6cb7-40a2-bab8-eaad66eb4262"
+              d="M160.62,106.11a31.57,31.57,0,0,1-3.86-.71l-28.15-7.54a40,40,0,1,0-53,.22l-28.48,7.36a28.33,28.33,0,0,1-3.66.65A12.05,12.05,0,0,0,33,118v60a12,12,0,0,0,12,12H159a12,12,0,0,0,12-12V118A12,12,0,0,0,160.62,106.11Z" />
+            <g id="b76905b1-2366-46ef-9ca6-dff6e5298fa8" data-name="DISPOSITIVO">
+              <g id="luz" data-name="LUZ" class="aa3b8ec4-1385-48a8-a316-0d62090c4a73">
+                <polygon class="be68a197-ddeb-4c6e-a898-62b44ab788a7" points="87 97 66 76 138 77 117.25 97.25 87 97" />
+                <polygon class="feeb2d33-9a9d-4814-8439-a5a1371988e3"
+                  points="86.88 135.63 69.25 153.25 66 76 87.13 97.38 86.88 135.63" />
+                <polygon class="e1c1db34-90ca-4cd3-8ce5-2b036d5f38f0"
+                  points="117.63 135.63 136 165 138 77 117.38 97.38 117.63 135.63" />
+              </g>
+              <g id="b530b263-b992-49b8-ba30-bda04a7d831c" data-name="CELU">
+                <rect class="a304cc8c-0d47-442b-b321-a799d4417399" x="84" y="93" width="37" height="75" rx="5.56" />
+                <circle cx="92" cy="103" r="5" />
+              </g>
+            </g>
+            <g id="a4a01079-00e8-4cd3-8e0a-6cce547b7a2d" data-name="brazos">
+              <rect class="b4cf6ede-786c-4176-9922-c4ee25407d6d" x="127.41" y="125.34" width="25" height="76" rx="12"
+                transform="translate(-74.43 145.67) rotate(-44.71)" />
+              <rect class="b4cf6ede-786c-4176-9922-c4ee25407d6d" x="52.38" y="125.54" width="25" height="76" rx="12"
+                transform="translate(144.85 6.82) rotate(48.67)" />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <!-- <img (click)="mostrarBtn(acerca.id)" class="icon" src={{acerca.icono}} alt="acerca de mi">  -->
+    <h2 (click)="mostrarBtn(acerca.id)" (click)="editarModel()" ng class="card-tittle container-fluid" (click)="onClick()">{{acerca.titulo}}</h2>
+    <h5 (click)="mostrarBtn(acerca.id)" (click)="editarModel()" class="card-text mb-4">
+      {{acerca.contenido}}
+    </h5>
+    <button (click)="editarModel()"></button>
+
+
+
+    <!-- formulario nuevo -->
+    <div class="edicion conteiner mt-5 mb-5" *ngIf="mostrarDiv">
+      <h1 class="form-tittle mt-3"> Editar </h1>
+
+      <form class="formularioEdicion my-4" novalidate #f="ngForm">
+        <div class="col-md-4 mb-1 mx-auto content">
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Titulo" class="form-control" id="nombre" name="nombre" [(ngModel)]="acerca.titulo"
+              required>
+          </div>
+          <div class="row form-group mt-2">
+            <textarea type="text" placeholder="Contenido" class="form-control" id="contenido" name="contenido"
+              [(ngModel)]="acerca.contenido" required> </textarea>
+          </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-outline-success btn-block mb-3" [disabled]="!f.valid" (click)="crear()">Guardar</button>
+      <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cerrar()">Cancelar</button>
+    </div>
+
+    <!-- formulario editar -->
+
+  </div>
+
+
+
+</div>

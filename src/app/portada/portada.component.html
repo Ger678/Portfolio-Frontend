@@ -1,4 +1,7 @@
-
+<!-- <boton-edit (botoneraCerrada)="cambiarMostrar($event)" class="boton" color="#52ab98" 
+[mostrarDiv]="mostrar"
+[id]="portadaId"
+[object]="nombre" ></boton-edit>   -->    
 <div class="card" *ngFor="let port of ports"> <!--[@inOut]=" showDiv ? 'in' : 'out'"--> <!--class="card animate__animated animate__fadeInLeft"-->
       <img class="portada" src={{port.portadaUrl}} alt="Card image cap" (click)="mostrarBtn(port.id)">
       <div class="iconos">
@@ -7,14 +10,82 @@
         <i class="fa-brands fa-discord fa-xl"></i>
       </div>
       <img class="profile" src={{port.perfilUrl}} alt="Card image cap" (click)="mostrarBtn(port.id)">
-      <div class="titulo">
-        <h2 class= "title" (click)="mostrarBtn(port.id)">{{port.nombre }} {{port.apellido}}</h2>
-        <h5 class= "subtitle">DESARROLLADOR WEB FULL STACK</h5>
+      <div class="titulo" >
+        <h2 class= "title" (click)="mostrarBtn(port.id)">{{port.nombre }}</h2>
+        <h5 class= "subtitle">{{port.subtitulo}}</h5>
       </div>
       <!-- </div> -->
-      <h5 class="texto" (click)="mostrarBtn(port.id)">{{port.contenido}}<p>{{dato}}</p></h5>      
+      <h5 class="texto" (click)="mostrarBtn(port.id)" (click)="editarModel()">{{port.contenido}}<p></p></h5>   
+      <!-- formulario nuevo -->
+      <div class="edicion conteiner-fluid mb-5" *ngIf="nuevo">
+        <h1 class="form-tittle mt-3"> Agregar Nuevo </h1>
+        
+        <form class="formEdicion my-4" (ngSubmit)="crear()" novalidate #f="ngForm">
+        <div class=" fotos">
+            <div class="row form-group my-auto me-4">
+              <i class="fa-solid fa-panorama fa-xl mb-4"></i>
+              <input type="text" placeholder="Foto de Portada" class="form-control mb-4" id="portadaUrl" name="portadaUrl"
+              [(ngModel)]="portadaUrl" required>
+            </div>
+            <div class="row form-group my-auto me-4">
+              <i class="fa-solid fa-id-card fa-xl mb-4"></i>
+              <input type="text" placeholder="Foto de Perfil" class="form-control mb-4" id="perfilUrl" name="perfilUrl"
+              [(ngModel)]="perfilUrl" required>
+            </div>
+        </div>
+          <div class="col-md-4 mb-1 mx-auto content">
+              <div class="row form-group mt-2">
+                <input type="text" placeholder="Nombre" class="form-control" id="nombre" name="nombre"
+                [(ngModel)]="nombre" required>
+              </div>
+              <div class="row form-group mt-2">
+                <input type="text" placeholder="Subtitulo" class="form-control" id="subtitulo" name="subtitulo"
+                [(ngModel)]="subtitulo" required>
+              </div>
+              <div class="row form-group mt-2">
+                <textarea type="text are" placeholder="Contenido" class="form-control" id="contenido" name="contenido"
+                [(ngModel)]="contenido" required> </textarea>
+              </div>
+          </div>              
+        </form>
+        <button type="button" class="btn btn-outline-success btn-block mb-3" (click)="crear()" [disabled]="!f.valid">Guardar</button>
+        <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cancelar()">Cancelar</button>
+  </div>
+
+   <!-- formulario editar --> 
+
+  <div class="edicion conteiner-fluid mb-5" *ngIf="editar">
+    <h1 class="form-tittle mt-3"> Editar </h1>
+    
+    <form class="formEdicion my-4" (ngSubmit)="crear()" novalidate #f="ngForm">
+    <div class=" fotos">
+        <div class="row form-group my-auto me-4">
+          <i class="fa-solid fa-panorama fa-xl mb-4"></i>
+          <input type="text" placeholder="Foto de Portada" class="form-control mb-4" id="portadaUrl" name="portadaUrl"
+          [(ngModel)]="port.portadaUrl" required>
+        </div>
+        <div class="row form-group my-auto me-4">
+          <i class="fa-solid fa-id-card fa-xl mb-4"></i>
+          <input type="text" placeholder="Foto de Perfil" class="form-control mb-4" id="perfilUrl" name="perfilUrl"
+          [(ngModel)]="port.perfilUrl" required>
+        </div>
+    </div>
+      <div class="col-md-4 mb-1 mx-auto content">
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Nombre" class="form-control" id="nombre" name="nombre"
+            [(ngModel)]="port.nombre" required>
+          </div>
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Subtitulo" class="form-control" id="subtitulo" name="subtitulo"
+            [(ngModel)]="port.subtitulo" required>
+          </div>
+          <div class="row form-group mt-2">
+            <textarea type="text are" placeholder="Contenido" class="form-control" id="contenido" name="contenido"
+            [(ngModel)]="port.contenido" required> </textarea>
+          </div>
+      </div>              
+    </form>
+    <button type="button" class="btn btn-outline-success btn-block mb-3" (click)="crear()" [disabled]="!f.valid">Guardar</button>
+    <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cancelar()">Cancelar</button>
 </div>
-<boton-edit (botoneraCerrada)="cambiarMostrar($event)" class="boton" color="#52ab98" 
-[mostrarDiv]="mostrar"
-[id]="portadaId"
-[object]="nombre" ></boton-edit>      
+</div>
