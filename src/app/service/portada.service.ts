@@ -21,7 +21,7 @@ export class PortadaService {
   }
 
   public editar(id: number, portada: Portada): Observable<any>{
-    return this.httpCLiente.put<any>(this.portadaUrl + `editar/${id}` , portada);
+    return this.httpCLiente.put<any>(this.portadaUrl + `update/${id}` , portada);
   }
 
   public delete(id: number): Observable<any>{

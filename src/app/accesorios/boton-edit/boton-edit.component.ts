@@ -102,9 +102,9 @@ export class BotonEditComponent implements OnInit {
 
   onBorrar(): any {
     const id = this.id;
-    const object = this.object;
+    const name = this.name;
 
-    this.btnService.delete(id, object).subscribe({
+    this.btnService.delete(id, name).subscribe({
       next: ( response: void) => {
         console.log(response);
       },

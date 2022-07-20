@@ -29,6 +29,7 @@ export class PortadaComponent implements OnInit {
   mostrar!: boolean;
   
   public ports: Portada [] = [];
+  public editPort!: Portada;
   portadaId: number = 1;
   titulo: string = "portada";
   nombre!: string;
@@ -99,7 +100,13 @@ export class PortadaComponent implements OnInit {
     });
   }
 
+  update(form: any){
+    this.portService.editar(this.portadaId, form).subscribe();
+    console.log(form);
+  }
+
   crear(): void{
+    
     const portada = new Portada(this.portadaId, this.nombre, this.subtitulo,
       this.perfilUrl, this.portadaUrl, this.contenido);
     this.portService.save(portada).subscribe();
