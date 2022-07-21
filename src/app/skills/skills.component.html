@@ -1,14 +1,17 @@
 <div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3">
   <!-- (scroll)="checkScroll()" *ngIf="showDiv" [@inOut]=" showDiv ? 'in' : 'out'"-->
   <div class="card">
-    <h2 class="card-tittle">{{titulo}}</h2>
+    <h2 class="card-tittle" style="text-transform:uppercase">{{titulo}}</h2>
     <div class="iconos">
-      <div class="logos" *ngFor="let skill of skills">
+      <div class="logos" *ngFor="let skill of skills" >
         <img class="imagen " 
           src={{skill.icono}} 
           alt={{skill.id}} 
+          (click)="mostrarBtn(skill.id)"
+          (click)="mostrarEditarOrNuevo()"
           (click)="onModal(skill.id, skill.icono, skill.nombre, skill.descripcion, skill.fotos, skill.porcentaje)"
           (click)="mostrarInfo()"
+          
            />
       </div>
     </div>
@@ -18,6 +21,70 @@
                [descripcion]="SDescripcion"
                [fotos]="SFotos"
                [porcentaje]="SPorcentaje"
-               [showDiv]="show"></app-modal>
+               [showDiv]="show">
+    </app-modal>
+
+     <!-- formulario editar --> 
+
+     <div class="edicion conteiner mt-5 mb-5" *ngIf="editar">
+      <h1 class="form-tittle mt-3"> Editar </h1>
+
+      <form class="formularioEdicion my-4" (ngSubmit)="update(f.value)"
+       novalidate #f="ngForm"
+      >            
+        <div class="col-md-4 mb-1 mx-auto content" >
+          <div class="row form-group mt-2">
+            <input hidden type="text" placeholder="Id " class="form-control" id="id" name="id"
+             [(ngModel)]="skills[index].id " >
+          </div>
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Icono" class="form-control" id="icono" name="icono"
+             [(ngModel)]="skills[index].icono" required>
+          </div>
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Nombre" class="form-control" id="nombre" name="nombre"
+             [(ngModel)]="skills[index].nombre" required>
+          </div>
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Descripcion" class="form-control" id="descripcion" name="descripcion"
+             [(ngModel)]="skills[index].descripcion" required>
+          </div>
+          <div class="row form-group mt-2">
+            <input type="number" placeholder="Porcentaje" class="form-control" id="porcentaje" name="porcentaje"
+             [(ngModel)]="skills[index].porcentaje" required>
+          </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-outline-success btn-block mb-3" [disabled]="!f.valid" (click)="update(f.value)">Guardar</button>
+      <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cerrar()">Cancelar</button>
+    </div>
+
+
+    <!-- formulario nuevo --> 
+    <div class="edicion conteiner mt-5 mb-5" *ngIf="nuevo">
+      <h1 class="form-tittle mt-3"> Agregar nuevo </h1>    
+      <form class="formularioEdicion my-4" (ngSubmit)="update(nuevo.value)" novalidate #nuevo="ngForm">
+        <div class="col-md-4 mb-1 mx-auto content">          
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Icono" class="form-control" id="icono" name="icono"
+             [(ngModel)]="icono" required>
+          </div>
+          <div class="row form-group mt-2">
+            <input hidden type="text" placeholder="Nombre" class="form-control" id="nombre" name="nombre"
+             [(ngModel)]="nombre">
+          </div>
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Titulo" class="form-control" id="tittle" name="tittle"
+             [(ngModel)]="tittle" required>
+          </div>
+          <div class="row form-group mt-2">
+            <input type="number" placeholder="Porcentaje" class="form-control" id="porcentaje" name="porcentaje"
+             [(ngModel)]="porcentaje" required>
+          </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-outline-success btn-block mb-3" [disabled]="!nuevo.valid" (click)="crear(nuevo.value)">Guardar</button>
+      <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cerrar()">Cancelar</button>
+    </div>
   </div>
 </div>

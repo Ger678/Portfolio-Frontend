@@ -24,6 +24,7 @@ export class BotonEditComponent implements OnInit {
   message!: any;
   editarModel!: boolean;
   nuevoModel!: boolean;
+  
 
   mostrarDiv: boolean = false;
   
@@ -101,8 +102,7 @@ export class BotonEditComponent implements OnInit {
     let editarModal = this.editarModel = true;
     this.btnService.sendEditar(editarModal); //enviando al servicio btn
     console.log("enviando al servicio desde EDITAR " + editarModal);
-    this.btnService.sendId(this.id);
-    this.btnService.sendNombre(this.name)
+    this.btnService.mostrarEditar(this.id, this.name);
     
   }
 
@@ -118,13 +118,14 @@ export class BotonEditComponent implements OnInit {
         console.log(error.message);
       }
     });
-    this.router.navigate(['/'])
+    location.reload();
   }
 
 
 
   onGuardar(){
     console.log("guardar");
+    location.reload();
   }
 
   onAgregar(){

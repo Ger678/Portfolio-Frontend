@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { SkillsService } from '../service/skills.service';
 import { Skills } from '../models/skills';
+import { BotonesService } from '../service/botones.service';
 
 @Component({
   selector: 'app-skills',
@@ -24,7 +25,7 @@ import { Skills } from '../models/skills';
 export class SkillsComponent implements OnInit {
 
 
-  titulo: string= "HABILIDADES";
+  titulo: string= "skills";
   idClick: number = 1;
   SIcono!: string;
   SNombre: string= "HTML";
@@ -33,12 +34,24 @@ export class SkillsComponent implements OnInit {
   SPorcentaje: number= 19;
   show!: boolean;
 
+  editar!: boolean;
+  nuevo!: boolean;
+  index: number=0;
+  mostrar!: boolean;
+  object!: any;
+  id!: number;
+  icono!: string;
+  nombre!: string;
+  tittle!: string;
+  porcentaje!: number;
+
 
   public skills: Skills [] = [];
 
 
 
-  constructor(private skService: SkillsService) { }
+  constructor(private skService: SkillsService,
+    private btnService: BotonesService,) { }
 
   ngOnInit(): void {
     this.listaSkills();
@@ -69,6 +82,69 @@ export class SkillsComponent implements OnInit {
   mostrarInfo() {
     this.show = true;
   }
+
+  mostrarBtn(id: number):any{
+    this.mostrar = true;
+    this.btnService.sendId(id);
+    this.recibeId();
+    this.index = this.id - 1;
+    this.btnService.sendBtn(this.mostrar);
+    this.btnService.sendId(id);
+    this.btnService.sendNombre(this.titulo);
+    this.btnService.sendObject(this.object);
+    
+  }
+
+  // estos 3 metodos los utilizo para abrir los divs de "edidar" y "agregar"
+
+  //este metodo lo vinculo con el template
+  mostrarEditarOrNuevo(){
+    this.nuevoModel();
+    this.editarModel();
+  }
+
+  //metodo para abrir el div "Agregar nuevo"
+  nuevoModel(){
+    this.btnService.mostrarNuevo(this.id, this.titulo).subscribe((data) => {
+      this.nuevo = data;
+    });
+  }
+
+  //metodo para abrir el div "Editar"
+  editarModel(){
+      this.btnService.recibeEditar().subscribe((d)=>{
+      this.editar = d;
+    });
+  }
+
+  recibeId(){
+    this.btnService.recibeId().subscribe((d)=>{
+      this.id = d;
+    })
+  }
+
+
+  //metodo para enviar al servicio que se comunica con la API
+  update(form: any){
+    this.skService.editar(this.id, form).subscribe();
+    console.log(form );
+    location.reload();
+  }
+
+  //metodo para enviar al servicio que se comunica con la API
+  crear(form: any): void{
+    this.skService.save(form).subscribe();
+    console.log(form);
+    location.reload();
+  }
+
+  //este metodo cierra los divs de "editar" y "nuevo"
+  cerrar(){
+    this.editar = false;
+    this.nuevo = false;
+    console.log("it works  " + this.editar)
+  }
+
 
 }
 

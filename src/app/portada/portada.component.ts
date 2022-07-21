@@ -113,10 +113,11 @@ export class PortadaComponent implements OnInit {
 
   update(form: any){
     this.portService.editar(this.portadaId, form).subscribe();
+    location.reload();
   }
 
   crear(form: any): void{    
     this.portService.save(form).subscribe();
-    this.router.navigate(['/'])
+    location.reload();
   }
 }

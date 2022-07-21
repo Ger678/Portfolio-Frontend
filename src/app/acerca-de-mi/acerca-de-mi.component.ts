@@ -34,12 +34,12 @@ export class AcercaDeMiComponent implements OnInit {
   public editAcerca!: Acerca;
   public borrarAcerca!: Acerca;
   id :number = 2;
-  tittle!: string;
+  titulo!: string;
   contenido!: string;
   icono!: string;
-  object: Acerca =new Acerca(this.id, this.tittle, this.contenido, this.icono) ;
+  object: Acerca =new Acerca(this.id, this.titulo, this.contenido, this.icono) ;
   mostrar!: boolean;
-  titulo: string = "acerca";
+  tittle: string = "acerca";
   mostrarDiv!: boolean ;
   nuevo!: boolean;
 
@@ -56,7 +56,7 @@ export class AcercaDeMiComponent implements OnInit {
     this.mostrar = true;
     this.btnService.sendBtn(this.mostrar);
     this.btnService.sendId(id);
-    this.btnService.sendNombre(this.titulo);
+    this.btnService.sendNombre(this.tittle);
     this.btnService.sendObject(this.object);
   }
 
@@ -81,14 +81,14 @@ export class AcercaDeMiComponent implements OnInit {
 
   //metodo para abrir el div "Agregar nuevo"
   nuevoModel(){
-    this.btnService.mostrarNuevo(this.id, this.titulo).subscribe((data) => {
+    this.btnService.mostrarNuevo(this.id, this.tittle).subscribe((data) => {
       this.nuevo = data;
     });
   }
 
   //metodo para abrir el div "Editar"
   editarModel(){
-      this.btnService.mostrarEditar(this.id, this.titulo).subscribe((d)=>{
+      this.btnService.mostrarEditar(this.id, this.tittle).subscribe((d)=>{
       this.mostrarDiv = d;      
       console.log("acerca works");
     });
@@ -99,12 +99,15 @@ export class AcercaDeMiComponent implements OnInit {
   //metodo para enviar al servicio que se comunica con la API
   update(form: any){
     this.acercaService.editar(this.id, form).subscribe();
+    console.log(form);
+    location.reload();
   }
 
   //metodo para enviar al servicio que se comunica con la API
   crear(form: any): void{
     this.acercaService.save(form).subscribe();
-    console.log(form)
+    console.log(form);
+    location.reload();
   }
 
   //este metodo cierra los divs de "editar" y "nuevo"

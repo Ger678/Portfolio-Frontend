@@ -92,12 +92,42 @@ i{
   font-weight: bold;
 }
 
-.btn{
-  grid-area: 4 / 2 / 5 / 3;
-  margin: 0;
+.edicion{
+  grid-area: 3/ 2 /4 / 3;
+  
+  border-radius: 30px ;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+  background-color: #ffffff;
+  border-radius: 0 0 30px 30px ;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+
+}
+
+.formularioEdicion{
+  display: flex;
+  width: -webkit-fill-available;
+}
+
+.form-tittle{
+  font-family: helvetica, sans-serif;
+  font-size: 3.8em;
+  font-weight: bold;
+  color: #599DA8;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn{
+  display: flex; 
+  width: 50%;
+  justify-content: center;
+
 }
 
 @keyframes float1 {

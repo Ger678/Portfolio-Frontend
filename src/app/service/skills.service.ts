@@ -19,5 +19,17 @@ export class SkillsService {
   public getById(id: number): Observable<Skills>{
     return this.http.get<Skills>(this.skillsUrl  + 'traer/' + id)
   }
+
+  public save(sk: Skills): Observable<any>{
+    return this.http.post<any>(this.skillsUrl + 'crear', sk);
+  }
+
+  public editar(id: number, sk: Skills): Observable<any>{
+    return this.http.put<any>(this.skillsUrl + `update/${id}` , sk);
+  }
+
+  public delete(id: number): Observable<any>{
+    return this.http.delete<any>(this.skillsUrl + `delete/${id}`);
+  }
 } 
 

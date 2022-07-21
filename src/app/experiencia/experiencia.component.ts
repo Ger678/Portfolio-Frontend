@@ -92,12 +92,15 @@ export class ExperienciaComponent implements OnInit {
   //metodo para enviar al servicio que se comunica con la API
   update(form: any){
     this.expeService.editar(this.id, form).subscribe();
+    console.log(form );
+    location.reload();
   }
 
   //metodo para enviar al servicio que se comunica con la API
   crear(form: any): void{
     this.expeService.save(form).subscribe();
-    console.log(form)
+    console.log(form);
+    location.reload();
   }
 
   //este metodo cierra los divs de "editar" y "nuevo"
