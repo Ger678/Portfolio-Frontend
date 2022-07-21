@@ -1,4 +1,4 @@
-<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3">
+<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3" (click)="mostrarEditarOrNuevo()">
   <div class="card" *ngFor="let acerca of acercas">
     <div class="icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
@@ -115,23 +115,22 @@
       </svg>
     </div>
     <!-- <img (click)="mostrarBtn(acerca.id)" class="icon" src={{acerca.icono}} alt="acerca de mi">  -->
-    <h2 (click)="mostrarBtn(acerca.id)" (click)="editarModel()" ng class="card-tittle container-fluid" (click)="onClick()">{{acerca.titulo}}</h2>
-    <h5 (click)="mostrarBtn(acerca.id)" (click)="editarModel()" class="card-text mb-4">
+    <h2 (click)="mostrarBtn(acerca.id)" ng class="card-tittle container-fluid" (click)="onClick()">{{acerca.titulo}}</h2>
+    <h5 (click)="mostrarBtn(acerca.id)" class="card-text mb-4">
       {{acerca.contenido}}
     </h5>
-    <button (click)="editarModel()"></button>
 
 
 
-    <!-- formulario nuevo -->
+    <!-- formulario editar -->
     <div class="edicion conteiner mt-5 mb-5" *ngIf="mostrarDiv">
       <h1 class="form-tittle mt-3"> Editar </h1>
 
-      <form class="formularioEdicion my-4" novalidate #f="ngForm">
+      <form class="formularioEdicion my-4" (ngSubmit)="update(f.value)" novalidate #f="ngForm">
         <div class="col-md-4 mb-1 mx-auto content">
           <div class="row form-group mt-2">
-            <input type="text" placeholder="Titulo" class="form-control" id="nombre" name="nombre" [(ngModel)]="acerca.titulo"
-              required>
+            <input type="text" placeholder="Titulo" class="form-control" id="nombre" name="nombre"
+             [(ngModel)]="acerca.titulo" required>
           </div>
           <div class="row form-group mt-2">
             <textarea type="text" placeholder="Contenido" class="form-control" id="contenido" name="contenido"
@@ -139,12 +138,30 @@
           </div>
         </div>
       </form>
-      <button type="button" class="btn btn-outline-success btn-block mb-3" [disabled]="!f.valid" (click)="crear()">Guardar</button>
+      <button type="button" class="btn btn-outline-success btn-block mb-3" [disabled]="!f.valid" (click)="update(f.value)">Guardar</button>
       <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cerrar()">Cancelar</button>
     </div>
 
-    <!-- formulario editar -->
 
+    <!-- formulario nuevo -->
+    <div class="edicion conteiner mt-5 mb-5" *ngIf="nuevo">
+      <h1 class="form-tittle mt-3"> Agregar nuevo </h1>
+
+      <form class="formularioEdicion my-4" (ngSubmit)="update(nuevo.value)" novalidate #nuevo="ngForm">
+        <div class="col-md-4 mb-1 mx-auto content">
+          <div class="row form-group mt-2">
+            <input type="text" placeholder="Titulo" class="form-control" id="nombre" name="nombre"
+             [(ngModel)]="tittle" required>
+          </div>
+          <div class="row form-group mt-2">
+            <textarea type="text" placeholder="Contenido" class="form-control" id="contenido" name="contenido"
+              [(ngModel)]="contenido" required> </textarea>
+          </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-outline-success btn-block mb-3" [disabled]="!nuevo.valid" (click)="crear(nuevo.value)">Guardar</button>
+      <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cerrar()">Cancelar</button>
+    </div>
   </div>
 
 

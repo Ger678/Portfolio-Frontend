@@ -80,6 +80,19 @@ export class BotonesService {
       return this.subjectFalse.asObservable();
     }
   }
+
+  mostrarNuevo(id: number, nombre: string){
+    if (this.id == id && this.name == nombre) {
+      console.log("paso la prueba");
+      console.log(this.id, this.name, this.mostrar)
+      return this.recibeAgregar();
+    } else {
+      console.log("no paso la prueba");
+      console.log(this.id, this.name)
+      return this.subjectFalse.asObservable();
+    }
+  }
+
   public recibeEditar(): Observable<any> {
       console.log('aca paso por el btn servicio');  
       return this.subjectEditar.asObservable(); 

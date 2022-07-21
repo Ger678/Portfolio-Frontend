@@ -23,12 +23,12 @@ export class BotonEditComponent implements OnInit {
   portada! : PortadaComponent;
   message!: any;
   editarModel!: boolean;
+  nuevoModel!: boolean;
 
   mostrarDiv: boolean = false;
   
 
   constructor(private btnService:BotonesService,
-    activatedRoute: ActivatedRoute,
       private router:Router) { }
 
   ngOnInit(): void {
@@ -41,6 +41,12 @@ export class BotonEditComponent implements OnInit {
     this.mostrarDiv = false;
     this.botoneraCerrada.emit(false);
     console.log("exit")
+    this.id= null;
+    this.name= " ";
+    this.editarModel=false;
+    this.mostrarEditar= false;
+    this.object= null;
+    this.nuevoModel= false;
   }
 
   recibeBtn(){
@@ -94,7 +100,7 @@ export class BotonEditComponent implements OnInit {
     console.log("editar a esta id: " + this.id + " con este nombre: " + this.name);
     let editarModal = this.editarModel = true;
     this.btnService.sendEditar(editarModal); //enviando al servicio btn
-    console.log("enviando al servicio " + editarModal);
+    console.log("enviando al servicio desde EDITAR " + editarModal);
     this.btnService.sendId(this.id);
     this.btnService.sendNombre(this.name)
     
@@ -122,10 +128,12 @@ export class BotonEditComponent implements OnInit {
   }
 
   onAgregar(){
-    console.log("agregar");
-    const trigger = this.editarModel = true;
-    this.btnService.sendAgregar(trigger)
-
+    console.log("editar a esta id: " + this.id + " con este nombre: " + this.name);
+    let nuevoModel = this.nuevoModel = true;
+    this.btnService.sendAgregar(nuevoModel); //enviando al servicio btn
+    console.log("enviando al servicio desde AGREGAR " + nuevoModel);
+    this.btnService.sendId(this.id);
+    this.btnService.sendNombre(this.name)
   }
 
   sendFalse(){

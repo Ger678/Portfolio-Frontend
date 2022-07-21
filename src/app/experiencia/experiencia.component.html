@@ -1,6 +1,6 @@
-<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3" *ngFor="let expe of expes" ><!--(scroll)="checkScroll()" *ngIf="showDiv" [@inOut]=" showDiv ? 'in' : 'out'"-->
-  <div class="tarjeta">
-    <!-- <img class="icon" src="assets/img/icons/grandes/icon_EXPER.svg" alt="experiencia"> -->
+<div id="tarjeta" class="container-fluid p-0 mt-3 rounded-3" *ngFor="let expe of expes" 
+(click)="mostrarEditarOrNuevo()">
+  <div class="tarjeta" >
     <div class="icon">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -222,9 +222,50 @@
         </g>
       </svg>
     </div>
-    <h2 class="card-tittle container-fluid">{{expe.titulo}}</h2>
-    <div class="card-text">
+    <h2 class="card-tittle container-fluid" (click)="mostrarBtn(expe.id)">{{expe.titulo}}</h2>
+    <div class="card-text mb-4" (click)="mostrarBtn(expe.id)">
       <h5>{{expe.contenido}}</h5>
     </div>
+
+       <!-- formulario editar -->
+       <div class="edicion conteiner mt-5 mb-5" *ngIf="editar">
+        <h1 class="form-tittle mt-3"> Editar </h1>
+  
+        <form class="formularioEdicion my-4" (ngSubmit)="update(f.value)" novalidate #f="ngForm">
+          <div class="col-md-4 mb-1 mx-auto content">
+            <div class="row form-group mt-2">
+              <input type="text" placeholder="Titulo" class="form-control" id="nombre" name="nombre"
+               [(ngModel)]="expe.titulo" required>
+            </div>
+            <div class="row form-group mt-2">
+              <textarea type="text" placeholder="Contenido" class="form-control" id="contenido" name="contenido"
+                [(ngModel)]="expe.contenido" required> </textarea>
+            </div>
+          </div>
+        </form>
+        <button type="button" class="btn btn-outline-success btn-block mb-3" [disabled]="!f.valid" (click)="update(f.value)">Guardar</button>
+        <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cerrar()">Cancelar</button>
+      </div>
+  
+  
+      <!-- formulario nuevo -->
+      <div class="edicion conteiner mt-5 mb-5" *ngIf="nuevo">
+        <h1 class="form-tittle mt-3"> Agregar nuevo </h1>
+  
+        <form class="formularioEdicion my-4" (ngSubmit)="update(nuevo.value)" novalidate #nuevo="ngForm">
+          <div class="col-md-4 mb-1 mx-auto content">
+            <div class="row form-group mt-2">
+              <input type="text" placeholder="Titulo" class="form-control" id="nombre" name="nombre"
+               [(ngModel)]="tittle" required>
+            </div>
+            <div class="row form-group mt-2">
+              <textarea type="text" placeholder="Contenido" class="form-control" id="contenido" name="contenido"
+                [(ngModel)]="contenido" required> </textarea>
+            </div>
+          </div>
+        </form>
+        <button type="button" class="btn btn-outline-success btn-block mb-3" [disabled]="!nuevo.valid" (click)="crear(nuevo.value)">Guardar</button>
+        <button type="button" class="btn btn-outline-danger btn-block mb-3" (click)="cerrar()">Cancelar</button>
+      </div>
   </div>
 </div>

@@ -21,7 +21,7 @@ export class AcercaService {
   }
 
   public editar(id: number, acerca: Acerca): Observable<any>{
-    return this.httpCLiente.put<any>(this.acercaUrl + `editar/${id}` , acerca);
+    return this.httpCLiente.put<any>(this.acercaUrl + `update/${id}` , acerca);
   }
 
   public delete(id: number): Observable<any>{

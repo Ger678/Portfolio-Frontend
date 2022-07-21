@@ -41,6 +41,7 @@ export class AcercaDeMiComponent implements OnInit {
   mostrar!: boolean;
   titulo: string = "acerca";
   mostrarDiv!: boolean ;
+  nuevo!: boolean;
 
   constructor(
     private acercaService: AcercaService,
@@ -69,7 +70,23 @@ export class AcercaDeMiComponent implements OnInit {
      }
    );
   }
+  
+  // estos 3 metodos los utilizo para abrir los divs de "edidar" y "agregar"
 
+  //este metodo lo vinculo con el template
+  mostrarEditarOrNuevo(){
+    this.nuevoModel();
+    this.editarModel();
+  }
+
+  //metodo para abrir el div "Agregar nuevo"
+  nuevoModel(){
+    this.btnService.mostrarNuevo(this.id, this.titulo).subscribe((data) => {
+      this.nuevo = data;
+    });
+  }
+
+  //metodo para abrir el div "Editar"
   editarModel(){
       this.btnService.mostrarEditar(this.id, this.titulo).subscribe((d)=>{
       this.mostrarDiv = d;      
@@ -78,17 +95,22 @@ export class AcercaDeMiComponent implements OnInit {
     console.log(this.mostrarDiv);
   }
 
-  update(){
-    
+
+  //metodo para enviar al servicio que se comunica con la API
+  update(form: any){
+    this.acercaService.editar(this.id, form).subscribe();
   }
 
-  crear(): void{
-    const acerca = new Acerca(this.id, this.titulo, this.contenido, this.icono);
-    this.acercaService.save(acerca).subscribe();
+  //metodo para enviar al servicio que se comunica con la API
+  crear(form: any): void{
+    this.acercaService.save(form).subscribe();
+    console.log(form)
   }
 
+  //este metodo cierra los divs de "editar" y "nuevo"
   cerrar(){
     this.mostrarDiv = false;
+    this.nuevo = false;
   }
 
   onClick(){

@@ -93,6 +93,17 @@ export class PortadaComponent implements OnInit {
     this.nuevo = false;
   }
 
+  mostrarEditarOrNuevo(){
+    this.nuevoModel();
+    this.editarModel();
+  }
+
+  nuevoModel(){
+    this.btnService.mostrarNuevo(this.portadaId, this.titulo).subscribe((data) => {
+      this.nuevo = data;
+    });
+  }
+
   editarModel(){
     this.btnService.mostrarEditar(this.portadaId, this.titulo).subscribe((d)=>{
       this.editar = d;
@@ -102,14 +113,10 @@ export class PortadaComponent implements OnInit {
 
   update(form: any){
     this.portService.editar(this.portadaId, form).subscribe();
-    console.log(form);
   }
 
-  crear(): void{
-    
-    const portada = new Portada(this.portadaId, this.nombre, this.subtitulo,
-      this.perfilUrl, this.portadaUrl, this.contenido);
-    this.portService.save(portada).subscribe();
+  crear(form: any): void{    
+    this.portService.save(form).subscribe();
     this.router.navigate(['/'])
   }
 }

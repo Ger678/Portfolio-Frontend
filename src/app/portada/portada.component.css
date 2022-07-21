@@ -122,3 +122,85 @@
   justify-content: center;
 
 }
+
+@keyframes luz1 {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: scale(0); 
+    transform: opacity(0.2); 
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: scale(2);
+    transform: opacity(1); 
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: scale(0);
+    transform: opacity(0.2); 
+  }
+}
+
+#tarjeta1{
+  animation: luz1 3s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes luz2 {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: scale(0.999); opacity: 0.2;
+  }
+  70% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: scale(1);opacity: 1;
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: scale(0.999);opacity: 0.2;
+  }
+}
+
+#tarjeta2{
+  animation: luz2 4s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes luz3 {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: scale(0.999); opacity: 0.2;
+  }
+  30% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: scale(1);opacity: 1;
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: scale(0.999);opacity: 0.2;
+  }
+}
+
+#tarjeta3{
+  animation: luz3 6s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes upDown {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    transform: rotate(0deg);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-5px);
+    transform: rotate(0.3deg);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(4px);
+    transform: rotate(0deg);
+  }
+}
+#brazoIzq{
+  animation: upDown 6s linear infinite;
+}
