@@ -85,18 +85,16 @@
         </svg>
       </div>
       <h2 class="card-tittle container-fluid" style="text-transform:uppercase">{{tituloComponent}}</h2>
-      <div id="info" *ngFor="let educ of educs; let i=index;" class="p-0 mt-3">
-
-        <div class="linea" *ngFor="let educ of educs" class="p-0 mt-3" class="p-0 mt-3"
-        
-        >
-          <div class="Educ">
-            <p class="itemId"(click)="mostrarEditarOrNuevo()" (click)="mostrarBtn(educ.id)"> {{educ.itemId}}</p>
-            <i class={{educ.icono}} (click)="mostrarEditarOrNuevo()" (click)="mostrarBtn(educ.id)"></i>
+      <div id="info"  class="p-0 mt-3">
+        <div class="linea" *ngFor="let educ of educs; let i=index;" class="p-0 mt-3">
+          <div class="educ" >
+            <div class="logos">
+              <p class="itemId"(click)="mostrarEditarOrNuevo()" (click)="mostrarBtn(educ.id)"> {{educ.itemId}}</p>
+              <i class={{educ.icono}} (click)="mostrarEditarOrNuevo()" (click)="mostrarBtn(educ.id)"></i>
+            </div>
             <div class="contenido">
               <h5 (click)="mostrarEditarOrNuevo()" (click)="mostrarBtn(educ.id)" >{{educ.titulo}}</h5>
-              <p (click)="mostrarEditarOrNuevo()"  (click)="mostrarBtn(educ.id)" >{{educ.fecha}}</p>
-              
+              <p (click)="mostrarEditarOrNuevo()"  (click)="mostrarBtn(educ.id)" >{{educ.fecha}}</p>              
             </div>
           </div>
         </div>
