@@ -2,8 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 // importamos las librerias de formulario que necesitamos
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { BotonesService } from 'src/app/service/botones.service';
 
 @Component({
   selector: 'app-login',
@@ -12,35 +13,54 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm = new FormGroup({
+    email : new FormControl('', Validators.required),
+    password : new FormControl('', Validators.required)
+  });
+  logged!: boolean;
+  
+
   display='none';
 
-  signupForm: FormGroup;
 
   constructor(
-
     private modalService: NgbModal,
     public activeModalService: NgbActiveModal,
+    private btnService: BotonesService,
     // inyectar en el constructor el formBuilder
-    private _builder: FormBuilder) {
-      // creamos el grupo de controles para el formulario
-    this.signupForm = this._builder.group({
-      nombre: ['', [Validators.required, Validators.minLength(5),Validators.maxLength(12)]],
-      usuario: ['', Validators.required],
-      email: ['', [Validators.email, Validators.required]],
-      clave: ['', [Validators.required, Validators.minLength(8)]]
-    })
-    
+    ) {
   }
-
-  enviar(values: any){
-  console.log(values)
-  }
-
+  
   ngOnInit(): void {
+  }
+
+  onLogin(form: any){
+    console.log(form)
+  this.isLogged()
   }
 
   closeModal(){
     this.activeModalService.close();
+  }
+
+  isLogged(){
+    const admin = {
+      email: "germanalejandroaguirre678@gmail.com",
+      pasword: "German530060+"
+    };
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
+
+    if (email == admin.email && password == admin.pasword){
+      this.logged = true;
+      console.log(this.logged);
+      this.closeModal();
+      return this.btnService.sendLogged(this.logged);      
+    }
+    else{
+      console.log(email, password, admin)
+      return console.log("no esta loggeado")      
+    }
   }
 
 }

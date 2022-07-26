@@ -1,6 +1,8 @@
+
 button{
     border-radius: 50%;
     margin: 10px;
+    
 }
 
 .menu{
@@ -56,3 +58,9 @@ button :hover{
     display: flex;
     flex-direction:column;
 }
+
+@media screen and (max-width:480px) {
+    .menu{
+        z-index: 1;
+    }
+  }

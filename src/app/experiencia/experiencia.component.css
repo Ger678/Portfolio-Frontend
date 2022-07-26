@@ -131,3 +131,64 @@ svg {
 #POPUP{
   animation: abrir 6s ease-in-out infinite;
 }
+@media screen and (max-width:480px) {
+  .tarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon{
+    padding: 20px;
+  }
+  .card-tittle{
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .card-text{
+    padding: 0;
+  }
+  h5{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 10px 30px;
+  }
+
+  .edicion {
+    width: 80%;
+    margin: 0;
+  }
+
+  .formEdicion{
+    display: flex;
+    width: 70%;
+  }
+  
+  .form-tittle{
+    font-size: 2em;
+  }
+  
+  .fotos{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .btn{
+    display: flex; 
+    width: 50%;
+    justify-content: center;
+  
+  }
+
+
+
+}

@@ -24,9 +24,12 @@ export class BotonEditComponent implements OnInit {
   message!: any;
   editarModel!: boolean;
   nuevoModel!: boolean;
+  isLogged!: boolean;
   
 
   mostrarDiv: boolean = false;
+
+  
   
 
   constructor(private btnService:BotonesService,
@@ -35,7 +38,8 @@ export class BotonEditComponent implements OnInit {
   ngOnInit(): void {
     this.recibeBtn();
     console.log(this.id, this.object);
-    
+    this.recibeLogged();
+        
   }
 
   onExit(): void {
@@ -74,6 +78,12 @@ export class BotonEditComponent implements OnInit {
     })
   }
 
+  recibeLogged(){
+    this.btnService.recibeLogged().subscribe((d)=>{
+      this.isLogged = d;
+    })
+  }
+
   recibeName(){
     this.btnService.recibeName().subscribe((d)=>{
       this.name = d;
@@ -86,6 +96,7 @@ export class BotonEditComponent implements OnInit {
     })
   }
   
+
 
   mostrarOpciones(){
     this.mostrarEditar = true;
@@ -121,7 +132,9 @@ export class BotonEditComponent implements OnInit {
     location.reload();
   }
 
-
+  onShare(){
+    console.log(window.document.location.href)
+  }
 
   onGuardar(){
     console.log("guardar");

@@ -1,43 +1,31 @@
 <div class="card">
     <i id="icon-x" class="fa-solid fa-x fa-xl close" aria-label="Close" (click)="activeModalService.dismiss('Cross click')"></i>
-    <div class="card-img-top">
-        
+    <div class="card-img-top">    
         
     </div>
     <div class="card-body">
-        <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
-            <div class="mb-3">
-                <label class="form-label">
-                <i class="fa-solid fa-ellipsis fa-lg m-3"></i>
-                 Nombre</label>
-                <input 
-                type="text" formControlName="nombre" class="form-control" placeholder="" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">
-                    <i class="fa-solid fa-user fa-lg m-3"></i>
-                    Usuario</label>
-                <input type="text" formControlName="usuario" class="form-control">
-            </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
             <div class="mb-3">
                 <label class="form-label">
                     <i class="fa-solid fa-at fa-lg m-3"></i>
                     Email</label>
-                <input type="email" formControlName="email" class="form-control">
+                <input type="email" formControlName="email" class="form-control" placeholder="Email">
+                
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <i class="fa-solid fa-lock fa-lg m-3"></i>
                     Contraseña</label>
-                <input type="password" formControlName="clave" class="form-control">
+                <input type="password" formControlName="password" class="form-control" placeholder="Contraseña">
+                
             </div>
             
         </form>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-success"  [disabled]="signupForm.invalid" type="submit">
+        <button class="btn btn-success" (click)="onLogin(loginForm.value)" type="submit">
             <i class="fa-solid fa-circle-check fa-lg m-2"></i>
-            Registrase</button>
+            Iniciar</button>
         <button type="button" class="btn btn-danger" (click)="activeModalService.close('Close click')">
             <i class="fa-solid fa-circle-xmark fa-lg m-2"></i>
             Close</button>

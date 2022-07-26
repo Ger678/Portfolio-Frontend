@@ -1,78 +1,38 @@
 <div class="container-fluid p-0 mt-3"><!--(scroll)="checkScroll()" [@inOut]=" showDiv ? 'in' : 'out'"-->
   <footer class="text-center text-white" style="background-color: #599da8">
     <div class="container">
-      <section class="mt-5">
-        <div class="row text-center d-flex justify-content-center pt-5">
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="/app-portada" class="text-white">perfil</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="/app-acerca-de-mi" class="text-white">Acerca de mi</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="/app-experiencia" class="text-white">experiencia</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="/app-educacion" class="text-white">Educacion</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="/app-skills" class="text-white">Skills</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row-->
-      </section>
-      <!-- Section: Links -->
-
       <hr class="my-5" />
-
       <!-- Section: Text -->
       <section class="mb-5">
         <div class=" container row d-flex justify-content-center">
           <div class="email col-lg-8">
             <h2 class="footer-heading footer-heading-white">¡Ponete en contacto!</h2>
             <form action="#" class="contact-form">
-              <div class="grupo">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Tu Nombre"
-                />
-              </div>
-              <div class="grupo">
+              <div class="primero" >
+                <div class="at" style="color: rgba(0, 0, 0, 0.2)">
+                  <i class="fa-solid fa-at"></i>
+                </div>
+                <div class="nomemail">
+                <div class="nombre">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Tu Nombre"
+                  />
+                </div>
+                <div class="email">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Tu Mail"
                 />
               </div>
-              <div class="grupo">
+              </div>
+            </div>
+              <div class="motivo">
                 <input type="text" class="form-control" placeholder="Motivo" />
               </div>
-              <div class="grupo">
+              <div class="mensaje">
                 <textarea
                   name=""
                   id=""
@@ -82,7 +42,7 @@
                   placeholder="Mensaje"
                 ></textarea>
               </div>
-              <div class="grupo">
+              <div class="enviar">
                 <button type="submit" class="form-control submit px-3">
                   Enviar
                 </button>
@@ -94,7 +54,7 @@
       <!-- Section: Text -->
 
       <!-- Section: Social -->
-      <section class="text-center mb-5">
+      <section class="social text-center mb-5">
         <a href="" class="text-white me-4">
           <i class="fab fa-facebook-f"></i>
         </a>

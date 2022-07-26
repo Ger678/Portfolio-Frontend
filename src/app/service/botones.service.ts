@@ -8,8 +8,8 @@ import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.componen
 })
 export class BotonesService {
 
-
-  public url: string = 'http://localhost:8180/';
+   public url: string = 'http://localhost:8180/';
+  /* public url: any = window.document.location.href; */
 
 
   name!: string;
@@ -26,6 +26,7 @@ export class BotonesService {
   public subjectEditar: Subject<any> = new Subject<any>();
   public sujectObject: Subject<any> = new Subject<any>();
   public subjectFalse: Subject<any> = new Subject<any>();
+  public subjectLogged: Subject<any> = new Subject<any>();
   constructor(private http: HttpClient) {}
 
   //COMUNICACION CON LOS LOS COMPONENTES POR SUBJECTS
@@ -33,35 +34,90 @@ export class BotonesService {
   ngOnInit(): void {
   }
 
-  declararId() {
-    this.recibeId().subscribe((d) => {
-      this.id = d;
-    });
-    console.log("id recibido :" + this.id)
+  
+
+  //send recibe Logged
+
+  public sendLogged(d: boolean) {
+    this.subjectLogged.next(d)
   }
 
-  declararName() {
-    this.recibeName().subscribe((d) => {
-      this.name = d;
-    });
-    console.log("nombre recibido :" + this.name)
+  public recibeLogged(){
+    return this.subjectLogged.asObservable();
   }
+
+  //send recibe Agregar
 
   public sendAgregar(dato: boolean) {
     this.subjectModel.next(dato);
   }
 
-  public sendId(id: any) {
-    this.subjectId.next(id);
+  public recibeAgregar(): Observable<boolean> {
+    return this.subjectModel.asObservable();
   }
+
+  //send recibe Name
 
   public sendNombre(nombre: string) {
     this.subjectName.next(nombre);
   }
 
+  public recibeName(): Observable<string> {
+    return this.subjectName.asObservable();
+  }
+
+  //send recibe Id
+
+  public sendId(id: any) {
+    this.subjectId.next(id);
+  }
+
+  public recibeId(): Observable<number> {
+    return this.subjectId.asObservable();
+  }
+
+  //send recibe Object
+
+  public sendObject(object: any) {
+    this.sujectObject.next(object);
+  }
+
+  public recibeObject(): Observable<any> {
+    return this.sujectObject.asObservable();
+  }
+
+  //send recibe Editar
+
   public sendEditar(dato: boolean): void {
     this.subjectEditar.next(dato);
   }
+
+  public recibeEditar(): Observable<any> {
+    console.log('aca paso por el btn servicio');  
+    return this.subjectEditar.asObservable(); 
+  }
+
+  //send recibe Boton
+
+  public sendBtn(dato: any) {
+    this.subject.next(dato);
+  }
+
+  public recibeBtn(): Observable<boolean> {
+    return this.subject.asObservable();
+  }
+
+  //send recibe False
+
+  public sendFalse(dato: boolean) {
+    this.subject.next(dato);
+  }
+
+  public recibeFalse(): Observable<boolean> {
+    return this.subject.asObservable();
+  }
+
+  // declaracion de propiedades
 
   declararMostrar(){
     this.recibeEditar().subscribe((d)=>{
@@ -93,43 +149,20 @@ export class BotonesService {
     }
   }
 
-  public recibeEditar(): Observable<any> {
-      console.log('aca paso por el btn servicio');  
-      return this.subjectEditar.asObservable(); 
+  declararId() {
+    this.recibeId().subscribe((d) => {
+      this.id = d;
+    });
+    console.log("id recibido :" + this.id)
   }
 
-  public recibeAgregar(): Observable<boolean> {
-    return this.subjectModel.asObservable();
+  declararName() {
+    this.recibeName().subscribe((d) => {
+      this.name = d;
+    });
+    console.log("nombre recibido :" + this.name)
   }
-
-  public sendBtn(dato: any) {
-    this.subject.next(dato);
-  }
-
-  public recibeBtn(): Observable<boolean> {
-    return this.subject.asObservable();
-  }
-  public sendFalse(dato: boolean) {
-    this.subject.next(dato);
-  }
-
-  public recibeFalse(): Observable<boolean> {
-    return this.subject.asObservable();
-  }
-  public recibeId(): Observable<number> {
-    return this.subjectId.asObservable();
-  }
-  public recibeName(): Observable<string> {
-    return this.subjectName.asObservable();
-  }
-
-  public sendObject(object: any) {
-    this.sujectObject.next(object);
-  }
-
-  public recibeObject(): Observable<any> {
-    return this.sujectObject.asObservable();
-  }
+  
 
   // FUNCIONES BASICAS DEL CRUD
 
