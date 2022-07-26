@@ -1,4 +1,6 @@
-
+.boton{
+    z-index: 1;
+}
 button{
     border-radius: 50%;
     margin: 10px;

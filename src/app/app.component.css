@@ -13,4 +13,5 @@ i{
 .boton{
     position: fixed;
     bottom: 50px;
+    z-index: 1;
 }

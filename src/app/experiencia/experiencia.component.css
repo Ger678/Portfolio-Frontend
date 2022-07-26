@@ -27,7 +27,6 @@ svg {
   justify-self: center;
   align-self: center;
   overflow: visible;
-  z-index: 3;
 }
 
 .card-tittle{ 
