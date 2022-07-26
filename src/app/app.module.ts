@@ -19,6 +19,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { PieComponent } from './pie/pie.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ModalComponent } from './accesorios/modal/modal.component';
+import { BienvenidaComponent } from './accesorios/bienvenida/bienvenida.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ModalComponent } from './accesorios/modal/modal.component';
     PieComponent,
     SkillsComponent,
     ModalComponent,
+    BienvenidaComponent,
   ],
   imports: [
     BrowserModule,

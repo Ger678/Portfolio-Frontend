@@ -1,9 +1,5 @@
-<!-- <boton-edit (botoneraCerrada)="cambiarMostrar($event)" class="boton" color="#52ab98" 
-[mostrarDiv]="mostrar"
-[id]="portadaId"
-[object]="nombre" ></boton-edit>   -->    
-<div class="card" *ngFor="let port of ports" (click)="mostrarEditarOrNuevo()"> <!--[@inOut]=" showDiv ? 'in' : 'out'"--> <!--class="card animate__animated animate__fadeInLeft"-->
-      <!-- <img class="portada" src={{port.portadaUrl}} alt="Card image cap" (click)="mostrarBtn(port.id)"> -->
+ 
+<div class="card" *ngFor="let port of ports" (click)="mostrarEditarOrNuevo()">
       <div class="portada">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1673 323">
           <defs>
