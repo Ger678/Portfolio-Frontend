@@ -1,10 +1,11 @@
-<div class="card">
-    <i id="icon-x" class="fa-solid fa-x fa-xl close" aria-label="Close" (click)="activeModalService.dismiss('Cross click')"></i>
+<div class="card container">
     <div class="card-img-top">    
-        
+        <div class="at" style="color: rgba(0, 0, 0, 0.2)">
+            <i class="fa-solid fa-user-astronaut"></i>
+        </div>
     </div>
     <div class="card-body">
-        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" novalidate #f="ngForm">
             <div class="mb-3">
                 <label class="form-label">
                     <i class="fa-solid fa-at fa-lg m-3"></i>
@@ -23,11 +24,11 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-success" (click)="onLogin(loginForm.value)" type="submit">
+        <button class="btn btn-outline-success" (click)="onLogin(loginForm.value)" type="submit" [disabled]="!f.valid">
             <i class="fa-solid fa-circle-check fa-lg m-2"></i>
             Iniciar</button>
-        <button type="button" class="btn btn-danger" (click)="activeModalService.close('Close click')">
-            <i class="fa-solid fa-circle-xmark fa-lg m-2"></i>
-            Close</button>
+        <button type="button" class="btn btn-outline-secondary" routerLink="/bienvenida" routerLinkActive="activebutton">
+            <i class="fa-solid fa-arrow-left fa-lg m-2"></i>
+            Volver</button>
     </div>
 </div>

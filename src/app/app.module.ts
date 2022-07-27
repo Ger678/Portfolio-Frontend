@@ -20,6 +20,7 @@ import { PieComponent } from './pie/pie.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ModalComponent } from './accesorios/modal/modal.component';
 import { BienvenidaComponent } from './accesorios/bienvenida/bienvenida.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { BienvenidaComponent } from './accesorios/bienvenida/bienvenida.componen
     SkillsComponent,
     ModalComponent,
     BienvenidaComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,35 @@
 
+.card{
+    background-color: #f1f1f1;
+    width: 600px;
+    margin-top: 50px;
+    border-radius: 30px ;
+}
+.card-img-top {
+    height: 200px;
+}
+.btn :hover{
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.at i{
+    color: rgb(89 157 168);
+}
+.at{
+    font-size: 10em;
+    text-shadow: rgb(183 183 183 / 75%) 7px 6px 1px;
+    text-align-last: center;
+}
+
 button{
     float: center;
     border-radius: 7px;
-    display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-i{
+.form-label i{
     color: #a5a5a5;
 }
 
@@ -17,36 +39,11 @@ label{
     font-size: 17px;
 }
 
-.card{
-    background-color: #D8D8D8;
-}
-.card-img-top {
-    height: 200px;
-    background-color: rgb(255, 255, 255);
-}
-.btn :hover{
-    cursor: pointer;
-    background-color: #599DA8;
-}
+/* Responsive styles */
 
-.fa-circle-check{
-    color: #ffffff;
-}
-.fa-circle-xmark{
-    color: #ffffff;
-}
-
-.card {
-    border-radius: 0 0 30px 30px ;
-    box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+@media screen and (max-width:480px){
+    .card{
+        margin-top: 10px;
+        width: 350px;
+    }
   }
-  
-  .card-body {
-    border-radius: 0 0 30px 30px ;
-}
-#icon-x{
-    display: flex;
-    justify-items: flex-start;
-    align-self: flex-end;
-    color: rgb(43, 43, 43);
-}
