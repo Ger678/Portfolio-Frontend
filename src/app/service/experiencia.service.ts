@@ -8,7 +8,7 @@ import { Experiencia } from '../models/experiencia';
 })
 export class ExperienciaService {
 
-  private expeUrl = 'http://localhost:8180/experiencia/'
+  private expeUrl = 'https://guarded-peak-41981.herokuapp.com/experiencia/'
 
   constructor( private http: HttpClient) { }
 

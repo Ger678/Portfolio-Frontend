@@ -1,10 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Educacion } from '../models/educacion';
-import { EducacionService } from '../service/educacion.service';
+import { Educacion } from '../../models/educacion';
+import { EducacionService } from '../../service/educacion.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { BotonesService } from '../service/botones.service';
-import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.component';
+import { BotonesService } from '../../service/botones.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -96,14 +95,14 @@ export class EducacionComponent implements OnInit {
   update(form: any){
     this.educService.editar(this.id, form).subscribe();
     console.log(form );
-    location.reload();    
+    this.router.navigate(['/info']);    
   }
 
   //metodo para enviar al servicio que se comunica con la API
   crear(form: any): void{
     this.educService.save(form).subscribe();
     console.log(form);
-    location.reload();
+    this.router.navigate(['/info']);
   }
 
   //este metodo cierra los divs de "editar" y "nuevo"

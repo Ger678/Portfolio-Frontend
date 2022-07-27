@@ -1,11 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.component';
-import { Acerca } from '../models/acerca';
-import { AcercaService } from '../service/acerca.service';
+import { BotonEditComponent } from '../../accesorios/boton-edit/boton-edit.component';
+import { Acerca } from '../../models/acerca';
+import { AcercaService } from '../../service/acerca.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { BotonesService } from '../service/botones.service';
-import { NumberSymbol } from '@angular/common';
+import { BotonesService } from '../../service/botones.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acerca-de-mi',
@@ -46,6 +46,7 @@ export class AcercaDeMiComponent implements OnInit {
   constructor(
     private acercaService: AcercaService,
     private btnService: BotonesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -100,7 +101,7 @@ export class AcercaDeMiComponent implements OnInit {
   update(form: any){
     this.acercaService.editar(this.id, form).subscribe();
     console.log(form);
-    location.reload();
+    this.router.navigate(['/info']);
   }
 
   //metodo para enviar al servicio que se comunica con la API
@@ -108,6 +109,7 @@ export class AcercaDeMiComponent implements OnInit {
     this.acercaService.save(form).subscribe();
     console.log(form);
     location.reload();
+    this.router.navigate(['/info']);
   }
 
   //este metodo cierra los divs de "editar" y "nuevo"

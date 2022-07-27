@@ -1,0 +1,55 @@
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #599DA8;
+  max-width: 100%;
+  border-radius: 0 0 30px 30px;
+}
+
+.menu-container i {
+  padding: 10px;
+  font-size: 40px;
+}
+.logo{
+    width: 140px;
+}
+
+.logo:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+
+  /* Style the topnav links */
+.topnav i {
+    color:#ffffff;
+    text-align: center;
+    float: right;
+    padding: 20px;
+    margin-top: 10px;
+  }
+  
+  /* Change color on hover */
+  .topnav i:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+   }
+
+
+  @media screen and (max-width:480px) {
+    *{
+      z-index: 1;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+    }
+    .menu-container i {
+      padding: 10px;
+      font-size: 17px;
+    }
+  .logo {
+      margin: -9px;
+      float: left;
+  }
+  }

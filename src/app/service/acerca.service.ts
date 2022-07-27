@@ -8,7 +8,7 @@ import { Acerca } from '../models/acerca';
 })
 export class AcercaService {
 
-  private acercaUrl = 'http://localhost:8180/acerca/'
+  private acercaUrl = 'https://guarded-peak-41981.herokuapp.com/acerca/'
 
   constructor( private httpCLiente : HttpClient ) { }
 

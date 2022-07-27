@@ -1,11 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
-import { Portada } from '../models/portada';
-import { PortadaService } from '../service/portada.service';
+import { Portada } from '../../models/portada';
+import { PortadaService } from '../../service/portada.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { BotonesService } from '../service/botones.service';
-import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.component';
+import { BotonesService } from '../../service/botones.service';
+import { BotonEditComponent } from '../../accesorios/boton-edit/boton-edit.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -113,11 +113,11 @@ export class PortadaComponent implements OnInit {
 
   update(form: any){
     this.portService.editar(this.portadaId, form).subscribe();
-    location.reload();
+    this.router.navigate(['/info']);
   }
 
   crear(form: any): void{    
     this.portService.save(form).subscribe();
-    location.reload();
+    this.router.navigate(['/info']);
   }
 }

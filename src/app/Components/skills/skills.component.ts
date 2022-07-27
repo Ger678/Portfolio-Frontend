@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { SkillsService } from '../service/skills.service';
-import { Skills } from '../models/skills';
-import { BotonesService } from '../service/botones.service';
+import { SkillsService } from '../../service/skills.service';
+import { Skills } from '../../models/skills';
+import { BotonesService } from '../../service/botones.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-skills',
@@ -51,7 +52,8 @@ export class SkillsComponent implements OnInit {
 
 
   constructor(private skService: SkillsService,
-    private btnService: BotonesService,) { }
+    private btnService: BotonesService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.listaSkills();
@@ -128,14 +130,14 @@ export class SkillsComponent implements OnInit {
   update(form: any){
     this.skService.editar(this.id, form).subscribe();
     console.log(form );
-    location.reload();
+    this.router.navigate(['/info']);
   }
 
   //metodo para enviar al servicio que se comunica con la API
   crear(form: any): void{
     this.skService.save(form).subscribe();
     console.log(form);
-    location.reload();
+    this.router.navigate(['/info']);
   }
 
   //este metodo cierra los divs de "editar" y "nuevo"

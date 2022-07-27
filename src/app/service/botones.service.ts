@@ -8,7 +8,7 @@ import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.componen
 })
 export class BotonesService {
 
-   public url: string = 'http://localhost:8180/';
+   public url: string = 'https://guarded-peak-41981.herokuapp.com/';
   /* public url: any = window.document.location.href; */
 
 
@@ -177,7 +177,7 @@ export class BotonesService {
   }
 
   public delete(id: number, nombre: string): Observable<void> {
-    const borrar = this.url + nombre + `/borrar/${id}`;
+    const borrar = this.url + nombre + `/delete/${id}`;
     return this.http.delete<void>(borrar);
   }
 }

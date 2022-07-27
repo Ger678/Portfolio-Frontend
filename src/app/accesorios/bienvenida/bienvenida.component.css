@@ -56,7 +56,7 @@
   
   /* Animations */
 
-  @keyframes wiggle {
+  @keyframes wiggleCSS {
     0%, 7% {
       transform: translatex(0);
     }
@@ -81,7 +81,7 @@
   }
 
   #CSS{
-    animation: wiggle 6s ease-in-out infinite;
+    animation: wiggleCSS 6s ease-in-out infinite;
 }
   @keyframes wiggle2 {
     0%, 15% {

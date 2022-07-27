@@ -5,22 +5,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
-import { PortadaComponent } from './portada/portada.component';
-import { AcercaDeMiComponent } from './acerca-de-mi/acerca-de-mi.component';
-import { ExperienciaComponent } from './experiencia/experiencia.component';
-import { HabilidadesComponent } from './habilidades/habilidades.component';
-import { BarraDeProgresoComponent } from './accesorios/barra-de-progreso/barra-de-progreso.component';
+import { BarraNavegacionComponent } from './Components/barra-navegacion/barra-navegacion.component';
+import { PortadaComponent } from './Components/portada/portada.component';
+import { AcercaDeMiComponent } from './Components/acerca-de-mi/acerca-de-mi.component';
+import { ExperienciaComponent } from './Components/experiencia/experiencia.component';
 import { BotonEditComponent } from './accesorios/boton-edit/boton-edit.component';
-import { EducacionComponent } from './educacion/educacion.component';
+import { EducacionComponent } from './Components/educacion/educacion.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './accesorios/login/login.component'
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { PieComponent } from './pie/pie.component';
-import { SkillsComponent } from './skills/skills.component';
+import { PieComponent } from './Components/pie/pie.component';
+import { SkillsComponent } from './Components/skills/skills.component';
 import { ModalComponent } from './accesorios/modal/modal.component';
 import { BienvenidaComponent } from './accesorios/bienvenida/bienvenida.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +27,6 @@ import { HomeComponent } from './home/home.component';
     PortadaComponent,
     AcercaDeMiComponent,
     ExperienciaComponent,
-    HabilidadesComponent,
-    BarraDeProgresoComponent,
     BotonEditComponent,
     EducacionComponent,
     LoginComponent,

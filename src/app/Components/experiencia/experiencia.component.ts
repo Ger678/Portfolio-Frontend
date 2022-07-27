@@ -1,10 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Experiencia } from '../models/experiencia';
-import { ExperienciaService } from '../service/experiencia.service';
+import { Experiencia } from '../../models/experiencia';
+import { ExperienciaService } from '../../service/experiencia.service';
 import { Observable } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
-import { BotonesService } from '../service/botones.service';
+import { BotonesService } from '../../service/botones.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
@@ -40,7 +41,8 @@ export class ExperienciaComponent implements OnInit {
   object: Experiencia =new Experiencia(this.id, this.tittle, this.contenido, this.icono) ;
 
   constructor( private expeService: ExperienciaService,
-               private btnService: BotonesService) { }
+               private btnService: BotonesService,
+               private router: Router) { }
 
   ngOnInit(): void {
     this.getExpe();
@@ -93,14 +95,14 @@ export class ExperienciaComponent implements OnInit {
   update(form: any){
     this.expeService.editar(this.id, form).subscribe();
     console.log(form );
-    location.reload();
+    this.router.navigate(['/info']);
   }
 
   //metodo para enviar al servicio que se comunica con la API
   crear(form: any): void{
     this.expeService.save(form).subscribe();
     console.log(form);
-    location.reload();
+    this.router.navigate(['/info']);
   }
 
   //este metodo cierra los divs de "editar" y "nuevo"

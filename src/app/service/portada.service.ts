@@ -8,7 +8,7 @@ import { Portada } from '../models/portada';
 })
 export class PortadaService {
 
-  private portadaUrl = 'http://localhost:8180/portada/'
+  private portadaUrl = 'https://guarded-peak-41981.herokuapp.com/portada/'
 
   constructor(private httpCLiente: HttpClient) { }
 

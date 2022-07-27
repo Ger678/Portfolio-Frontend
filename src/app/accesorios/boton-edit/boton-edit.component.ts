@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PortadaComponent } from 'src/app/portada/portada.component';
+import { PortadaComponent } from 'src/app/Components/portada/portada.component';
 import { BotonesService } from 'src/app/service/botones.service';
 
 @Component({
@@ -29,7 +29,10 @@ export class BotonEditComponent implements OnInit {
 
   mostrarDiv: boolean = false;
 
-  
+  shareObject={
+    url: window.document.location.href,
+    titulo: 'Portfolio de German'
+  }
   
 
   constructor(private btnService:BotonesService,
@@ -133,7 +136,13 @@ export class BotonEditComponent implements OnInit {
   }
 
   onShare(){
+    const url = window.document.location.href;
     console.log(window.document.location.href)
+    if(navigator.share){
+      navigator.share(this.shareObject).then(() => console.log(this.shareObject)).catch(error => console.log(url, error));
+    } else {
+      console.log("no supported")
+    }
   }
 
   onGuardar(){

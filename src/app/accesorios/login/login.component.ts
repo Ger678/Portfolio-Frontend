@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 // importamos las librerias de formulario que necesitamos
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { BotonesService } from 'src/app/service/botones.service';
 
@@ -24,9 +25,9 @@ export class LoginComponent implements OnInit {
 
 
   constructor(
-    private modalService: NgbModal,
     public activeModalService: NgbActiveModal,
     private btnService: BotonesService,
+    private router: Router
     // inyectar en el constructor el formBuilder
     ) {
   }
@@ -53,13 +54,13 @@ export class LoginComponent implements OnInit {
 
     if (email == admin.email && password == admin.pasword){
       this.logged = true;
-      console.log(this.logged);
-      this.closeModal();
+      this.router.navigate(['/info']);
+      alert("Bienvenido")
       return this.btnService.sendLogged(this.logged);      
     }
     else{
       console.log(email, password, admin)
-      return console.log("no esta loggeado")      
+      return alert("No pudo ingresar")      
     }
   }
 
