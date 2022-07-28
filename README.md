@@ -1,27 +1,65 @@
-# Portfolio
+# Portfolio German Aguirre                                    ![GitHub language count](https://img.shields.io/github/languages/count/Ger678/Portfolio-Frontend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+This is my first Frontend project, this is were you will find diferents Api's, languages and technologies wich i use to work in this WPA. This is a project carried out within a framework of a course in Argentina called [#ArgentinaProgama](https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa). I hope you enjoy it.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Description
 
-## Code scaffolding
+This project aims to introduce me as a Full Stack web developer. The Frontend part manages routes, to be located correctly in the app. Use Angular for development and bootstrap to give it the style you were looking for.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Instructions
 
-## Build
+To know the basic functionalities of the APP, a personal username and password is necessary.
+> The username and password were previously submitted for a project evaluation.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+After you loggin you will see my personal information and different ways to contact me.
 
-## Running unit tests
+> Also you can visit the app whit the "Visita" button
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Buttons functions
 
-## Running end-to-end tests
+The principal idea i had when i was developing the frontend part are the side buttons menu, the function of the buttons work when you select an element. It had 6 diffents options.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Button        | Function      | Logged|
+| ------------- |:-------------:| -----:|
+| Share     | Share the page | no |
+| New      | Create a selected new element | Si |
+| Check | (still in work)      |    Si |
+| Delete | Delete a selected element      |    Si |
+| Edit | Edit a selected element      |    Si |
+| Exit | hides the button menu      |    Si |
 
-## Further help
+#### Skills Window "Toca los logos"
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This is a way to show the basic information from icons of the differents languages, technologies and frameworks i use for this project.
+Just **tap** any icon
+
+## Learning
+
+Throughout this project he acquires different technical skills but above all a new passion for programming.
+
+## License
+
+MIT License
+
+Copyright (c) 2022 German Alejandro Aguirre
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
