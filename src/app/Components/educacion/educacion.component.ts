@@ -1,8 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Educacion } from '../../models/educacion';
 import { EducacionService } from '../../service/educacion.service';
-import { HttpErrorResponse } from '@angular/common/http';
 import { BotonesService } from '../../service/botones.service';
 import { Router } from '@angular/router';
 

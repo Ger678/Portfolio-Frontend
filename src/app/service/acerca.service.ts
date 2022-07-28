@@ -25,7 +25,7 @@ export class AcercaService {
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpCLiente.delete<any>(this.acercaUrl + `borrar/${id}`);
+    return this.httpCLiente.delete<any>(this.acercaUrl + `delete/${id}`);
   }
   
 }
