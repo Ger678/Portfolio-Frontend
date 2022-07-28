@@ -80,6 +80,10 @@
   font: helvetica, arial, helvetica;
 }
 
+i{
+  color: #A4A4A4;
+}
+
 .edicion{
   grid-area: 4/ 2 /5 / 5;
   
