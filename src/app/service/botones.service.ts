@@ -34,7 +34,65 @@ export class BotonesService {
   ngOnInit(): void {
   }
 
+  //send recibe Editar
+
+  public sendEditar(dato: boolean): void {
+    this.subjectEditar.next(dato);
+  }
+
+  public recibeEditar(): Observable<any> {
+    console.log('aca paso por el btn servicio');  
+    return this.subjectEditar.asObservable(); 
+  }
+
+  //method to recibe name and id of the subject
+
+  declararId() {
+    this.recibeId().subscribe((d) => {
+      this.id = d;
+    });
+    console.log("id recibido :" + this.id)
+  }
+
+  declararName() {
+    this.recibeName().subscribe((d) => {
+      this.name = d;
+    });
+    console.log("nombre recibido :" + this.name)
+  }
+
+    // declaracion de propiedades
+
+    declararMostrar(){
+      this.recibeEditar().subscribe((d)=>{
+        this.mostrar = d;
+      })
+      console.log("MOSTRAR: " + this.mostrar)
+    }
+    
+    mostrarEditar(id: number, nombre: string){
+      if (this.id == id && this.name == nombre) {
+        console.log("paso la prueba");
+        console.log(this.id, this.name, this.mostrar)
+        return this.recibeEditar();
+      } else {
+        console.log("no paso la prueba");
+        console.log(this.id, this.name)
+        return this.subjectFalse.asObservable();
+      }
+    }
   
+    mostrarNuevo(id: number, nombre: string){
+      if (this.id == id && this.name == nombre) {
+        console.log("paso la prueba");
+        console.log(this.id, this.name, this.mostrar)
+        return this.recibeAgregar();
+      } else {
+        console.log("no paso la prueba");
+        console.log(this.id, this.name)
+        return this.subjectFalse.asObservable();
+      }
+    }
 
   //send recibe Logged
 
@@ -86,16 +144,6 @@ export class BotonesService {
     return this.sujectObject.asObservable();
   }
 
-  //send recibe Editar
-
-  public sendEditar(dato: boolean): void {
-    this.subjectEditar.next(dato);
-  }
-
-  public recibeEditar(): Observable<any> {
-    console.log('aca paso por el btn servicio');  
-    return this.subjectEditar.asObservable(); 
-  }
 
   //send recibe Boton
 
@@ -115,52 +163,6 @@ export class BotonesService {
 
   public recibeFalse(): Observable<boolean> {
     return this.subject.asObservable();
-  }
-
-  // declaracion de propiedades
-
-  declararMostrar(){
-    this.recibeEditar().subscribe((d)=>{
-      this.mostrar = d;
-    })
-    console.log("MOSTRAR: " + this.mostrar)
-  }
-  mostrarEditar(id: number, nombre: string){
-    if (this.id == id && this.name == nombre) {
-      console.log("paso la prueba");
-      console.log(this.id, this.name, this.mostrar)
-      return this.recibeEditar();
-    } else {
-      console.log("no paso la prueba");
-      console.log(this.id, this.name)
-      return this.subjectFalse.asObservable();
-    }
-  }
-
-  mostrarNuevo(id: number, nombre: string){
-    if (this.id == id && this.name == nombre) {
-      console.log("paso la prueba");
-      console.log(this.id, this.name, this.mostrar)
-      return this.recibeAgregar();
-    } else {
-      console.log("no paso la prueba");
-      console.log(this.id, this.name)
-      return this.subjectFalse.asObservable();
-    }
-  }
-
-  declararId() {
-    this.recibeId().subscribe((d) => {
-      this.id = d;
-    });
-    console.log("id recibido :" + this.id)
-  }
-
-  declararName() {
-    this.recibeName().subscribe((d) => {
-      this.name = d;
-    });
-    console.log("nombre recibido :" + this.name)
   }
   
 
