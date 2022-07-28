@@ -1,6 +1,6 @@
-# Portfolio
+# Portfolio German Aguirre 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+This is my first Frontend project, this is were you will find diferents Api's, languages and technologies wich i use to work in this WPA. I hope you enjoy it.
 
 ## Development server
 
