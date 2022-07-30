@@ -1,52 +1,49 @@
-*{
+* {
   box-sizing: border-box;
 }
 
 .card {
-  box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179);
   background-color: #ffffff;
-  border-radius: 0 0 30px 30px ;
-
+  border-radius: 0 0 30px 30px;
 
   display: grid;
   column-gap: 0.5em;
-  grid-template-rows: 1fr 1fr auto auto auto auto; 
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr auto; 
+  grid-template-rows: 1fr 1fr auto auto auto auto;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr auto;
 }
 
-
-.portada { 
+.portada {
   grid-area: 1 / 1 / 2 / 7;
   display: flex;
   justify-content: center;
   width: 100%;
   height: auto;
- }
+}
 
-
-.profile{
-  grid-area:  2 / 1 / 4 / 1;
+.profile {
+  grid-area: 2 / 1 / 4 / 1;
   display: flex;
   justify-self: center;
   width: 200px;
   border-radius: 50%;
-  box-shadow: 5px 5px 10px rgb(139, 139, 139) ;
+  box-shadow: 5px 5px 10px rgb(139, 139, 139);
 }
 
-.iconos { 
-  grid-area:  3 / 1 / 4 / 2; 
+.iconos {
+  grid-area: 3 / 1 / 4 / 2;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: #A4A4A4;
+  color: #a4a4a4;
 }
-.fa-brands:hover{
+.fa-brands:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
 
-.titulo{
-  grid-area:  2 / 2 / 3 / 6;
+.titulo {
+  grid-area: 2 / 2 / 3 / 6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,12 +51,11 @@
 }
 
 .title {
-  padding-left: 10px ;
+  padding-left: 10px;
   font-family: helvetica, sans-serif;
   font-size: 3.8em;
   font-weight: bold;
-  color: #599DA8;
-
+  color: #599da8;
 }
 
 .subtitle {
@@ -70,60 +66,58 @@
   font-style: italic;
 }
 
-.texto{
-  grid-area:  3 / 2 / 4 / 5;
+.texto {
+  grid-area: 3 / 2 / 4 / 5;
   padding-left: 15px;
   text-align: left;
   text-indent: 10px;
   letter-spacing: 1px;
-  color: #A4A4A4;
+  color: #a4a4a4;
   font: helvetica, arial, helvetica;
 }
 
-i{
-  color: #A4A4A4;
+i {
+  color: #a4a4a4;
 }
 
-.edicion{
+.edicion {
   grid-area: 4/ 2 /5 / 5;
-  
-  border-radius: 30px ;
-  box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179);
   background-color: #ffffff;
-  border-radius: 0 0 30px 30px ;
+  border-radius: 0 0 30px 30px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-.formEdicion{
+.formEdicion {
   display: flex;
 }
 
-.form-tittle{
+.form-tittle {
   font-family: helvetica, sans-serif;
   font-size: 3.8em;
   font-weight: bold;
-  color: #599DA8;
+  color: #599da8;
 }
 
-.fotos{
+.fotos {
   display: flex;
   flex-direction: column;
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
 }
 
-.btn{
-  display: flex; 
+.btn {
+  display: flex;
   width: 50%;
   justify-content: center;
-
 }
 
 @keyframes izquierda {
@@ -137,7 +131,7 @@ i{
   }
 }
 
-#tarjeta1{
+#tarjeta1 {
   animation: izquierda 3s 2;
 }
 @keyframes luz2 {
@@ -151,7 +145,7 @@ i{
   }
 }
 
-#tarjeta2{
+#tarjeta2 {
   animation: luz2 5s 2;
 }
 @keyframes luz3 {
@@ -165,98 +159,95 @@ i{
   }
 }
 
-#tarjeta3{
+#tarjeta3 {
   animation: luz3 6s 2;
 }
 
 @keyframes upDown {
   0% {
-    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
     transform: rotate(0deg);
   }
   50% {
-    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
     transform: translatey(-5px);
     transform: rotate(0.3deg);
   }
   100% {
-    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(4px);
     transform: rotate(0deg);
   }
 }
-#brazoIzq{
+#brazoIzq {
   animation: upDown 6s linear infinite;
 }
 
-  @media screen and (max-width:480px) {
-    .card{
-      display:flex;
-      align-items: center;
-      z-index: 0;
-    }
-    .portada{
-      display: none;
-    }
-    .iconos{
-      display: none;
-    }
-  
-    .profile{
-      margin: 20px;
-      width : 170px;
-    }
-    .title{
-      display: flex;
-      justify-content: center;
-      font-size: 2em;
-      padding: 10px;
-      margin: 0 auto;
-    }
-    .subtitle{
-      display: flex;
-      justify-content: center;
-      font-size: 0.9em;
-      padding: 10px;
-    }
-    .texto{
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.7em;
-      padding: 10px 30px;
-    }
-  
-    .edicion {
-      width: 80%;
-    }
-  
-    .formEdicion{
-      display: flex;
-      width: 70%;
-    }
-    
-    .form-tittle{
-      font-size: 2em;
-    }
-    
-    .fotos{
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .content{
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .btn{
-      display: flex; 
-      width: 50%;
-      justify-content: center;
-    
-    } 
+@media screen and (max-width: 480px) {
+  .card {
+    display: flex;
+    align-items: center;
+    z-index: 0;
+  }
+  .portada {
+    display: none;
+  }
+  .iconos {
+    display: none;
+  }
 
+  .profile {
+    margin: 20px;
+    width: 170px;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .subtitle {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    padding: 10px;
+  }
+  .texto {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 10px 30px;
+  }
 
+  .edicion {
+    width: 80%;
+  }
+
+  .formEdicion {
+    display: flex;
+    width: 70%;
+  }
+
+  .form-tittle {
+    font-size: 2em;
+  }
+
+  .fotos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+  }
 }

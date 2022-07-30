@@ -1,94 +1,94 @@
-*{  
-    box-sizing: border-box;
-  }
-  
-  #tarjeta {
-    margin-top:80px;
-    box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
-    background-color: #ffffff;
-    border-radius: 30px;
-  
-    display: grid;
-    column-gap: 0.5em;
-    grid-template-rows: 1fr 1fr 1fr; 
-    grid-template-columns: 1fr 1fr; 
-    max-height: 600px;
+* {
+  box-sizing: border-box;
+}
+
+#tarjeta {
+  margin-top: 80px;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179);
+  background-color: #ffffff;
+  border-radius: 30px;
+
+  display: grid;
+  column-gap: 0.5em;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  max-height: 600px;
+}
+
+.icon {
+  grid-area: 1 / 2 / 4 / 3;
+  max-width: 800px;
+}
+
+.card-tittle {
+  grid-area: 0 / 1 / 1 / 2;
+}
+
+.card-text {
+  grid-area: 2 / 1 / 3 / 2;
+  padding-left: 40px;
+  text-align: left;
+  color: #a4a4a4;
+  font: helvetica, arial, helvetica;
+}
+
+.botones {
+  grid-area: 3 / 1 / 4 / 2;
+  justify-self: flex-start;
+  justify-self: space-between;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+button {
+  margin: 10px;
+  font-size: 20px;
+}
+
+h1 {
+  padding: 40px;
+  font-family: helvetica, sans-serif;
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #599da8;
+}
+
+/* Animations */
+
+@keyframes wiggleCSS {
+  from,
+  20%,
+  53%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
   }
 
-  .icon{
-    grid-area: 1 / 2 / 4 / 3;
-    max-width: 800px;
-  }
-  
-  .card-tittle{ 
-    grid-area: 0 / 1 / 1 / 2;
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0) scaleY(1.1);
   }
 
-  .card-text{ 
-    grid-area: 2 / 1 / 3 / 2;
-    padding-left: 40px;
-    text-align: left;
-    color: #A4A4A4;
-    font: helvetica, arial, helvetica;  
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0) scaleY(1.05);
   }
 
-  .botones{ 
-    grid-area: 3 / 1 / 4 / 2;
-    justify-self: flex-start;
-    justify-self:space-between;
-    margin-top: 10px;
-    margin-left: 30px;
-  }
-  button{
-    margin: 10px;
-    font-size: 20px
+  80% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
   }
 
-
-  h1{
-    padding: 40px;
-    font-family: helvetica, sans-serif;
-    font-size: 3.5em;
-    font-weight: bold;
-    color: #599DA8; 
+  90% {
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
   }
+}
 
-  
-  /* Animations */
-
-  @keyframes wiggleCSS {
-    from,
-    20%,
-    53%,
-    to {
-      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-      transform: translate3d(0, 0, 0);
-    }
-  
-    40%,
-    43% {
-      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-      transform: translate3d(0, -30px, 0) scaleY(1.1);
-    }
-  
-    70% {
-      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-      transform: translate3d(0, -15px, 0) scaleY(1.05);
-    }
-  
-    80% {
-      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-      transform: translate3d(0, 0, 0) scaleY(0.95);
-    }
-  
-    90% {
-      transform: translate3d(0, -4px, 0) scaleY(1.02);
-    }
-  }
-
-  #CSS, #HTML, #JAVA{
-    animation: wiggleCSS 1.5s infinite;
-    transform-origin: center bottom;
+#CSS,
+#HTML,
+#JAVA {
+  animation: wiggleCSS 1.5s infinite;
+  transform-origin: center bottom;
 }
 
 @keyframes corazon1 {
@@ -102,10 +102,11 @@
   }
 }
 
-#CORAZON1, #CORAZON2, #CORAZON3{
+#CORAZON1,
+#CORAZON2,
+#CORAZON3 {
   animation: corazon1 4s ease-in-out infinite;
 }
-
 
 @keyframes abrir {
   0% {
@@ -123,7 +124,7 @@
     opacity: 1;
   }
 }
-#POP_UP{
+#POP_UP {
   animation: abrir 2s ease-in 1;
 }
 @keyframes backInRight {
@@ -146,7 +147,8 @@
 #BARRA {
   animation: backInRight 2s 1;
 }
-#HILL, #Aa{
+#HILL,
+#Aa {
   animation: color 2s ease-in-out infinite;
 }
 
@@ -169,60 +171,61 @@
   35% {
     transform: translatey(-4px);
   }
-  40%, 100% {
+  40%,
+  100% {
     transform: translatey(0);
   }
 }
 
-#RUEDA{
+#RUEDA {
   animation: color 6s ease-in-out infinite;
 }
 
-  /* Diseño Responsivo */
+/* Diseño Responsivo */
 
-  @media screen and (max-width:480px){
-    #tarjeta{
-      margin-top: 30px;
-      width: 350px;
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-       align-items: center;
-    }
-    .icon{
-      width: 200px;
-      order: 1;
-    }
-
-    .card-title{
-      order: 2;
-      padding: 5px;
-      margin-top: -10px;
-      margin-bottom: 0;
-    }
-    h1{ 
-      padding: 0;
-      font-size: 20px;
-      margin: 0;
-    }
-    h3{
-      font-size: 13px;
-      margin: 0;
-    }
-    .card-text{ 
-      padding: 5px;
-      margin: 0;
-      order: 3;
-    }
-    .botones{ 
-      justify-self: flex-start;
-      justify-self:space-between;
-      margin-top: -25px;
-      margin-left: 0;
-      order: 4;
-    }
-    button{
-      margin: 5px;
-      font-size: 10px
-    }
+@media screen and (max-width: 480px) {
+  #tarjeta {
+    margin-top: 30px;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+  .icon {
+    width: 200px;
+    order: 1;
+  }
+
+  .card-title {
+    order: 2;
+    padding: 5px;
+    margin-top: -10px;
+    margin-bottom: 0;
+  }
+  h1 {
+    padding: 0;
+    font-size: 20px;
+    margin: 0;
+  }
+  h3 {
+    font-size: 13px;
+    margin: 0;
+  }
+  .card-text {
+    padding: 5px;
+    margin: 0;
+    order: 3;
+  }
+  .botones {
+    justify-self: flex-start;
+    justify-self: space-between;
+    margin-top: -25px;
+    margin-left: 0;
+    order: 4;
+  }
+  button {
+    margin: 5px;
+    font-size: 10px;
+  }
+}

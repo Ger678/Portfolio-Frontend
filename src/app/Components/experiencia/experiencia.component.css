@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -7,18 +7,18 @@ svg {
 }
 
 .tarjeta {
-  border-radius: 0 0 30px 30px ;
-  box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179);
   background-color: #ffffff;
-  border-radius: 0 0 30px 30px ;
+  border-radius: 0 0 30px 30px;
 
   display: grid;
   column-gap: 0.5em;
-  grid-template-rows: 8em auto auto; 
-  grid-template-columns: 0.4fr 6fr 2fr; 
+  grid-template-rows: 8em auto auto;
+  grid-template-columns: 0.4fr 6fr 2fr;
 }
 
-.icon{
+.icon {
   grid-area: 1 / 3 / 4 / 4;
   width: 200px;
   max-width: 250px;
@@ -29,7 +29,7 @@ svg {
   overflow: visible;
 }
 
-.card-tittle{ 
+.card-tittle {
   grid-area: 1 / 2 / 2 / 3;
   display: flex;
   justify-self: flex-start;
@@ -37,10 +37,10 @@ svg {
   font-family: helvetica, sans-serif;
   font-size: 3.5em;
   font-weight: bold;
-  color: #599DA8;
+  color: #599da8;
 }
 
-.card-text{ 
+.card-text {
   grid-area: 2 / 2 / 3 / 3;
   display: flex;
   justify-self: flex-start;
@@ -50,47 +50,44 @@ svg {
   text-align: left;
   text-indent: 10px;
   letter-spacing: 1px;
-  color: #A4A4A4;
+  color: #a4a4a4;
   font: helvetica, arial, helvetica;
-
 }
 
-.edicion{
+.edicion {
   grid-area: 3/ 2 /4 / 3;
-  
-  border-radius: 30px ;
-  box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179);
   background-color: #ffffff;
-  border-radius: 0 0 30px 30px ;
+  border-radius: 0 0 30px 30px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-.formularioEdicion{
+.formularioEdicion {
   display: flex;
   width: -webkit-fill-available;
 }
 
-.form-tittle{
+.form-tittle {
   font-family: helvetica, sans-serif;
   font-size: 3.8em;
   font-weight: bold;
-  color: #599DA8;
+  color: #599da8;
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
 }
 
-.btn{
-  display: flex; 
+.btn {
+  display: flex;
   width: 50%;
   justify-content: center;
-
 }
 
 @keyframes abrir {
@@ -112,47 +109,50 @@ svg {
 
 @keyframes luz1 {
   0% {
-    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-    transform: scale(0.999); opacity: 0.2;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: scale(0.999);
+    opacity: 0.2;
   }
   50% {
-    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-    transform: scale(1);opacity: 5;
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    opacity: 5;
   }
   100% {
-    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-    transform: scale(0.999);opacity: 0.2;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: scale(0.999);
+    opacity: 0.2;
   }
 }
 
-#luz{
+#luz {
   animation: luz1 2s ease-in-out infinite;
   opacity: 0;
 }
 
-#POPUP{
+#POPUP {
   animation: abrir 4s infinite;
 }
-@media screen and (max-width:480px) {
-  .tarjeta{
+@media screen and (max-width: 480px) {
+  .tarjeta {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .icon{
+  .icon {
     padding: 20px;
   }
-  .card-tittle{
+  .card-tittle {
     display: flex;
     justify-content: center;
     font-size: 2em;
     padding: 10px;
     margin: 0 auto;
   }
-  .card-text{
+  .card-text {
     padding: 0;
   }
-  h5{
+  h5 {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -165,32 +165,28 @@ svg {
     margin: 0;
   }
 
-  .formEdicion{
+  .formEdicion {
     display: flex;
     width: 70%;
   }
-  
-  .form-tittle{
+
+  .form-tittle {
     font-size: 2em;
   }
-  
-  .fotos{
+
+  .fotos {
     display: flex;
     flex-direction: column;
   }
-  
-  .content{
+
+  .content {
     display: flex;
     flex-direction: column;
   }
-  
-  .btn{
-    display: flex; 
+
+  .btn {
+    display: flex;
     width: 50%;
     justify-content: center;
-  
   }
-
-
-
 }

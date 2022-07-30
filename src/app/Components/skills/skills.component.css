@@ -1,117 +1,110 @@
-*{
+* {
   box-sizing: border-box;
 }
 
 .tarjeta {
-  border-radius: 0 0 30px 30px ;
-  box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179);
   background-color: #ffffff;
-  border-radius: 0 0 30px 30px ;
+  border-radius: 0 0 30px 30px;
 
   display: grid;
   column-gap: 1em;
-  grid-template-rows: 1fr auto auto; 
-  grid-template-columns: 0.4fr 6fr 4fr; 
+  grid-template-rows: 1fr auto auto;
+  grid-template-columns: 0.4fr 6fr 4fr;
+}
 
-  }  
+.card-tittle {
+  grid-area: 1 / 2 / 2 /3;
+  padding-top: 0.7em;
+  padding-bottom: 30px;
+  font-family: helvetica, sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  color: #599da8;
+}
 
-.card-tittle { 
-    grid-area: 1 / 2 / 2 /3;
-    padding-top: 0.7em;
-    padding-bottom: 30px;
-    font-family: helvetica, sans-serif;
-    font-size: 4em;
-    font-weight: bold;
-    color: #599DA8;
-  }
+#modal {
+  grid-area: 2 / 3 / 3 / 4;
+  margin: 1em;
+}
 
-  #modal{
-    grid-area: 2 / 3 / 3 / 4;
-    margin: 1em;
-  }
-
-  .iconos {
-/*     display:grid;
+.iconos {
+  /*     display:grid;
     grid-template-rows: auto 2em auto auto 2em auto auto 2em auto auto; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;  */
-    grid-area: 2 / 2 / 3 / 3;
-    padding: 2em;
+  grid-area: 2 / 2 / 3 / 3;
+  padding: 2em;
 
-    display: flex;
-    
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;  
+  display: flex;
 
-  }
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-  .logos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
+.logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .imagen{
-    display: flex;
-    width:70px;
-    max-width: 70px;
-    padding:3px;
-    margin: 20px;
-  } 
+.imagen {
+  display: flex;
+  width: 70px;
+  max-width: 70px;
+  padding: 3px;
+  margin: 20px;
+}
 
-  .imagen:hover{
-    cursor: pointer;
-    transform: scale(1.2);
-  }
+.imagen:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
 
-   .subtitulo{ 
-    display: flex;
-    align-self: center;
-   }
+.subtitulo {
+  display: flex;
+  align-self: center;
+}
 
-   .edicion{
-    grid-area: 3/ 2 /4 / 3;
-    
-    border-radius: 30px ;
-    box-shadow: 5px 5px 10px rgb(180, 179, 179) ;
-    background-color: #ffffff;
-    border-radius: 0 0 30px 30px ;
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-  }
-  
-  .formularioEdicion{
-    display: flex;
-    width: -webkit-fill-available;
-  }
-  
-  .form-tittle{
-    font-family: helvetica, sans-serif;
-    font-size: 3.8em;
-    font-weight: bold;
-    color: #599DA8;
-  }
-  
-  .content{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .btn{
-    display: flex; 
-    width: 50%;
-    justify-content: center;
-  
-  }
+.edicion {
+  grid-area: 3/ 2 /4 / 3;
 
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgb(180, 179, 179);
+  background-color: #ffffff;
+  border-radius: 0 0 30px 30px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-h5{
-  display:flex;
+.formularioEdicion {
+  display: flex;
+  width: -webkit-fill-available;
+}
+
+.form-tittle {
+  font-family: helvetica, sans-serif;
+  font-size: 3.8em;
+  font-weight: bold;
+  color: #599da8;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+h5 {
+  display: flex;
   justify-content: center;
   align-self: center;
   padding: 1em;
@@ -120,23 +113,23 @@ h5{
   font-style: italic;
 }
 
-@media screen and (max-width:480px) {
-  .tarjeta{
+@media screen and (max-width: 480px) {
+  .tarjeta {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .card-tittle{
+  .card-tittle {
     display: flex;
     justify-content: center;
     font-size: 2em;
     padding: 10px;
     margin: 0 auto;
   }
-  .logos{
+  .logos {
     width: 20%;
   }
-  .imagen{
+  .imagen {
     width: 70%;
   }
 
@@ -145,32 +138,28 @@ h5{
     margin: 0;
   }
 
-  .formEdicion{
+  .formEdicion {
     display: flex;
     width: 70%;
   }
-  
-  .form-tittle{
+
+  .form-tittle {
     font-size: 2em;
   }
-  
-  .fotos{
+
+  .fotos {
     display: flex;
     flex-direction: column;
   }
-  
-  .content{
+
+  .content {
     display: flex;
     flex-direction: column;
   }
-  
-  .btn{
-    display: flex; 
+
+  .btn {
+    display: flex;
     width: 50%;
     justify-content: center;
-  
   }
-
-
-
 }

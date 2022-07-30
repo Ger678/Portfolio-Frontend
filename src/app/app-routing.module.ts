@@ -6,17 +6,16 @@ import { HomeComponent } from './Components/home/home.component';
 import { PieComponent } from './Components/pie/pie.component';
 
 const routes: Routes = [
-  {path: 'bienvenida', component: BienvenidaComponent},
-  {path: 'info', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'mail', component: PieComponent},
-  {path: '', redirectTo: '/bienvenida', pathMatch: 'full'},
-  {path: '**', component: BienvenidaComponent}
-
+  { path: 'bienvenida', component: BienvenidaComponent },
+  { path: 'info', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'mail', component: PieComponent },
+  { path: '', redirectTo: '/bienvenida', pathMatch: 'full' },
+  { path: '**', component: BienvenidaComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

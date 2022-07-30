@@ -8,9 +8,8 @@ describe('AcercaDeMiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AcercaDeMiComponent ]
-    })
-    .compileComponents();
+      declarations: [AcercaDeMiComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

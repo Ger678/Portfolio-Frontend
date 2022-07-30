@@ -1,68 +1,67 @@
-.boton{
-    z-index: 1;
+.boton {
+  z-index: 1;
 }
-button{
-    border-radius: 50%;
-    margin: 10px;
-    
-}
-
-.menu{
-    display: flex;
-    flex-direction: column;
-    position: relative;
+button {
+  border-radius: 50%;
+  margin: 10px;
 }
 
-.share{
-    /* bottom: 25px;
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.share {
+  /* bottom: 25px;
     left: 25px; */
-    background-color: #ffffff;
-    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 5px rgb(180, 179, 179);
 }
 
 .share i {
-    color : #599DA8
+  color: #599da8;
 }
 
-.exit{
-    background-color: lightgray;
-    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
+.exit {
+  background-color: lightgray;
+  box-shadow: 2px 2px 5px rgb(180, 179, 179);
 }
 
-.plus{
-    background-color: lightseagreen;
-    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
+.plus {
+  background-color: lightseagreen;
+  box-shadow: 2px 2px 5px rgb(180, 179, 179);
 }
 
-.xmark{
-    background-color: lightcoral;
-    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
+.xmark {
+  background-color: lightcoral;
+  box-shadow: 2px 2px 5px rgb(180, 179, 179);
 }
-.pencil{
-    background-color: lightblue;
-    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
+.pencil {
+  background-color: lightblue;
+  box-shadow: 2px 2px 5px rgb(180, 179, 179);
 }
-.check{
-    background-color: lightgreen;
-    box-shadow: 2px 2px 5px rgb(180, 179, 179) ;
+.check {
+  background-color: lightgreen;
+  box-shadow: 2px 2px 5px rgb(180, 179, 179);
 }
 
-button :hover{
-    cursor: pointer;
-    transform: scale(1.2);
+button :hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .botonera i {
-    color: white;
+  color: white;
 }
 
-.botonera{
-    display: flex;
-    flex-direction:column;
+.botonera {
+  display: flex;
+  flex-direction: column;
 }
 
-@media screen and (max-width:480px) {
-    .menu{
-        z-index: 1;
-    }
+@media screen and (max-width: 480px) {
+  .menu {
+    z-index: 1;
   }
+}

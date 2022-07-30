@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BarraNavegacionComponent } from './Components/barra-navegacion/barra-navegacion.component';
@@ -11,8 +11,8 @@ import { AcercaDeMiComponent } from './Components/acerca-de-mi/acerca-de-mi.comp
 import { ExperienciaComponent } from './Components/experiencia/experiencia.component';
 import { BotonEditComponent } from './accesorios/boton-edit/boton-edit.component';
 import { EducacionComponent } from './Components/educacion/educacion.component';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { LoginComponent } from './accesorios/login/login.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './accesorios/login/login.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { PieComponent } from './Components/pie/pie.component';
 import { SkillsComponent } from './Components/skills/skills.component';
@@ -45,6 +45,6 @@ import { HomeComponent } from './Components/home/home.component';
     HttpClientModule,
   ],
   providers: [NgbActiveModal],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

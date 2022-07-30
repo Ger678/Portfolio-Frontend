@@ -1,34 +1,60 @@
 <div class="card container">
-    <div class="card-img-top">    
-        <div class="at" style="color: rgba(0, 0, 0, 0.2)">
-            <i class="fa-solid fa-user-astronaut"></i>
-        </div>
+  <div class="card-img-top">
+    <div class="at" style="color: rgba(0, 0, 0, 0.2)">
+      <i class="fa-solid fa-user-astronaut"></i>
     </div>
-    <div class="card-body">
-        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" novalidate #f="ngForm">
-            <div class="mb-3">
-                <label class="form-label">
-                    <i class="fa-solid fa-at fa-lg m-3"></i>
-                    Email</label>
-                <input type="email" formControlName="email" class="form-control" placeholder="Email">
-                
-            </div>
-            <div class="mb-3">
-                <label class="form-label">
-                    <i class="fa-solid fa-lock fa-lg m-3"></i>
-                    Contraseña</label>
-                <input type="password" formControlName="password" class="form-control" placeholder="Contraseña">
-                
-            </div>
-            
-        </form>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-outline-success" (click)="onLogin(loginForm.value)" type="submit" [disabled]="!f.valid">
-            <i class="fa-solid fa-circle-check fa-lg m-2"></i>
-            Iniciar</button>
-        <button type="button" class="btn btn-outline-secondary" routerLink="/bienvenida" routerLinkActive="activebutton">
-            <i class="fa-solid fa-arrow-left fa-lg m-2"></i>
-            Volver</button>
-    </div>
+  </div>
+  <div class="card-body">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onLogin(loginForm.value)"
+      novalidate
+      #f="ngForm"
+    >
+      <div class="mb-3">
+        <label class="form-label">
+          <i class="fa-solid fa-at fa-lg m-3"></i>
+          Email</label
+        >
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="Email"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">
+          <i class="fa-solid fa-lock fa-lg m-3"></i>
+          Contraseña</label
+        >
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Contraseña"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      class="btn btn-outline-success"
+      (click)="onLogin(loginForm.value)"
+      type="submit"
+      [disabled]="!f.valid"
+    >
+      <i class="fa-solid fa-circle-check fa-lg m-2"></i>
+      Iniciar
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      routerLink="/bienvenida"
+      routerLinkActive="activebutton"
+    >
+      <i class="fa-solid fa-arrow-left fa-lg m-2"></i>
+      Volver
+    </button>
+  </div>
 </div>

@@ -7,15 +7,12 @@ import { BotonEditComponent } from '../accesorios/boton-edit/boton-edit.componen
   providedIn: 'root',
 })
 export class BotonesService {
-
-   public url: string = 'https://guarded-peak-41981.herokuapp.com/';
+  public url: string = 'https://guarded-peak-41981.herokuapp.com/';
   /* public url: any = window.document.location.href; */
-
 
   name!: string;
   id!: number;
-  
-  
+
   mostrar!: boolean;
   btnComponent!: BotonEditComponent;
   false: boolean = false;
@@ -31,8 +28,7 @@ export class BotonesService {
 
   //COMUNICACION CON LOS LOS COMPONENTES POR SUBJECTS
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   //send recibe Editar
 
@@ -41,8 +37,8 @@ export class BotonesService {
   }
 
   public recibeEditar(): Observable<any> {
-    console.log('aca paso por el btn servicio');  
-    return this.subjectEditar.asObservable(); 
+    console.log('aca paso por el btn servicio');
+    return this.subjectEditar.asObservable();
   }
 
   //method to recibe name and id of the subject
@@ -51,56 +47,56 @@ export class BotonesService {
     this.recibeId().subscribe((d) => {
       this.id = d;
     });
-    console.log("id recibido :" + this.id)
+    console.log('id recibido :' + this.id);
   }
 
   declararName() {
     this.recibeName().subscribe((d) => {
       this.name = d;
     });
-    console.log("nombre recibido :" + this.name)
+    console.log('nombre recibido :' + this.name);
   }
 
-    // declaracion de propiedades
+  // declaracion de propiedades
 
-    declararMostrar(){
-      this.recibeEditar().subscribe((d)=>{
-        this.mostrar = d;
-      })
-      console.log("MOSTRAR: " + this.mostrar)
+  declararMostrar() {
+    this.recibeEditar().subscribe((d) => {
+      this.mostrar = d;
+    });
+    console.log('MOSTRAR: ' + this.mostrar);
+  }
+
+  mostrarEditar(id: number, nombre: string) {
+    if (this.id == id && this.name == nombre) {
+      console.log('paso la prueba');
+      console.log(this.id, this.name, this.mostrar);
+      return this.recibeEditar();
+    } else {
+      console.log('no paso la prueba');
+      console.log(this.id, this.name);
+      return this.subjectFalse.asObservable();
     }
-    
-    mostrarEditar(id: number, nombre: string){
-      if (this.id == id && this.name == nombre) {
-        console.log("paso la prueba");
-        console.log(this.id, this.name, this.mostrar)
-        return this.recibeEditar();
-      } else {
-        console.log("no paso la prueba");
-        console.log(this.id, this.name)
-        return this.subjectFalse.asObservable();
-      }
+  }
+
+  mostrarNuevo(id: number, nombre: string) {
+    if (this.id == id && this.name == nombre) {
+      console.log('paso la prueba');
+      console.log(this.id, this.name, this.mostrar);
+      return this.recibeAgregar();
+    } else {
+      console.log('no paso la prueba');
+      console.log(this.id, this.name);
+      return this.subjectFalse.asObservable();
     }
-  
-    mostrarNuevo(id: number, nombre: string){
-      if (this.id == id && this.name == nombre) {
-        console.log("paso la prueba");
-        console.log(this.id, this.name, this.mostrar)
-        return this.recibeAgregar();
-      } else {
-        console.log("no paso la prueba");
-        console.log(this.id, this.name)
-        return this.subjectFalse.asObservable();
-      }
-    }
+  }
 
   //send recibe Logged
 
   public sendLogged(d: boolean) {
-    this.subjectLogged.next(d)
+    this.subjectLogged.next(d);
   }
 
-  public recibeLogged(){
+  public recibeLogged() {
     return this.subjectLogged.asObservable();
   }
 
@@ -144,7 +140,6 @@ export class BotonesService {
     return this.sujectObject.asObservable();
   }
 
-
   //send recibe Boton
 
   public sendBtn(dato: any) {
@@ -164,7 +159,6 @@ export class BotonesService {
   public recibeFalse(): Observable<boolean> {
     return this.subject.asObservable();
   }
-  
 
   // FUNCIONES BASICAS DEL CRUD
 

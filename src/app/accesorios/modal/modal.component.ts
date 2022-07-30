@@ -5,10 +5,9 @@ import { SkillsService } from 'src/app/service/skills.service';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
-
   public skill!: Skills;
 
   @Input() itemId: number = 1;
@@ -17,27 +16,21 @@ export class ModalComponent implements OnInit {
   @Input() descripcion!: string;
   @Input() fotos!: string;
   @Input() porcentaje!: number;
-  @Input() showDiv: boolean= false;
+  @Input() showDiv: boolean = false;
   numero: number = this.itemId;
 
-  constructor(
-        private skService: SkillsService) {
-         }
+  constructor(private skService: SkillsService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-
-
-  public getSkill():void {
-      this.skService.getById(this.itemId).subscribe(
-      data => {
+  public getSkill(): void {
+    this.skService.getById(this.itemId).subscribe(
+      (data) => {
         this.skill = data;
       },
-      error => {
-        console.log(error)
+      (error) => {
+        console.log(error);
       }
     );
   }
-
 }

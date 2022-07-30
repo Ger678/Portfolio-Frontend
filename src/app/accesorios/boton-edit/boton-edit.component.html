@@ -1,24 +1,32 @@
-<div class=" menu container">
-    <div *ngIf="isLogged">
-        <div class="botonera" *ngIf="mostrarDiv" >
-            <button class="btn btn-lg exit" (click)="onExit()" data-bs-toggle="tooltip">
-                <i class="fa-solid fa-xmark fa-lg"></i>
-            </button>
-            <button class="btn btn-lg pencil" (click)="onEditar()" (click)="mostrarOpciones()">
-                <i class="fa-solid fa-pencil "></i>
-            </button>
-            <button class="btn btn-lg xmark" (click)="onBorrar()" >
-                <i class="fa-solid fa-circle-minus"></i>
-            </button>
-            <button class="btn btn-lg check" (click)="onGuardar()" >
-                <i class="fa-solid fa-check "></i>
-            </button>
-            <button class="btn btn-lg plus" (click)="onAgregar()" >
-                <i class="fa-solid fa-plus fa-lg"></i>
-            </button>
-        </div>
+<div class="menu container">
+  <div *ngIf="isLogged">
+    <div class="botonera" *ngIf="mostrarDiv">
+      <button
+        class="btn btn-lg exit"
+        (click)="onExit()"
+        data-bs-toggle="tooltip"
+      >
+        <i class="fa-solid fa-xmark fa-lg"></i>
+      </button>
+      <button
+        class="btn btn-lg pencil"
+        (click)="onEditar()"
+        (click)="mostrarOpciones()"
+      >
+        <i class="fa-solid fa-pencil"></i>
+      </button>
+      <button class="btn btn-lg xmark" (click)="onBorrar()">
+        <i class="fa-solid fa-circle-minus"></i>
+      </button>
+      <button class="btn btn-lg check" (click)="onGuardar()">
+        <i class="fa-solid fa-check"></i>
+      </button>
+      <button class="btn btn-lg plus" (click)="onAgregar()">
+        <i class="fa-solid fa-plus fa-lg"></i>
+      </button>
     </div>
-    <button class="btn btn-lg share" (click)="onShare()">
-        <i class="fa-solid fa-share-nodes fa-lg"></i>
-    </button>
+  </div>
+  <button class="btn btn-lg share" (click)="onShare()">
+    <i class="fa-solid fa-share-nodes fa-lg"></i>
+  </button>
 </div>

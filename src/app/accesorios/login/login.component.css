@@ -1,49 +1,48 @@
-
-.card{
-    background-color: #f1f1f1;
-    width: 600px;
-    margin-top: 50px;
-    border-radius: 30px ;
+.card {
+  background-color: #f1f1f1;
+  width: 600px;
+  margin-top: 50px;
+  border-radius: 30px;
 }
 .card-img-top {
-    height: 200px;
+  height: 200px;
 }
-.btn :hover{
-    cursor: pointer;
-    background-color: #ffffff;
-}
-
-.at i{
-    color: rgb(89 157 168);
-}
-.at{
-    font-size: 10em;
-    text-shadow: rgb(183 183 183 / 75%) 7px 6px 1px;
-    text-align-last: center;
+.btn :hover {
+  cursor: pointer;
+  background-color: #ffffff;
 }
 
-button{
-    float: center;
-    border-radius: 7px;
-    justify-content: space-around;
-    align-items: center;
+.at i {
+  color: rgb(89 157 168);
+}
+.at {
+  font-size: 10em;
+  text-shadow: rgb(183 183 183 / 75%) 7px 6px 1px;
+  text-align-last: center;
 }
 
-.form-label i{
-    color: #a5a5a5;
+button {
+  float: center;
+  border-radius: 7px;
+  justify-content: space-around;
+  align-items: center;
 }
 
-label{
-    color: #a5a5a5;
-    font-family: helvetica, arial, sans-serif;
-    font-size: 17px;
+.form-label i {
+  color: #a5a5a5;
+}
+
+label {
+  color: #a5a5a5;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 17px;
 }
 
 /* Responsive styles */
 
-@media screen and (max-width:480px){
-    .card{
-        margin-top: 10px;
-        width: 350px;
-    }
+@media screen and (max-width: 480px) {
+  .card {
+    margin-top: 10px;
+    width: 350px;
   }
+}

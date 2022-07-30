@@ -1,17 +1,17 @@
-body{
-    background-color: #e4e4e4;
+body {
+  background-color: #e4e4e4;
 }
 
-div{
-    padding: 20px;
+div {
+  padding: 20px;
 }
 
-i{
-    color: #599DA8;
+i {
+  color: #599da8;
 }
 
-.boton{
-    position: fixed;
-    bottom: 50px;
-    z-index: 1;
+.boton {
+  position: fixed;
+  bottom: 50px;
+  z-index: 1;
 }

@@ -1,41 +1,37 @@
-*{
-    display: block;
+* {
+  display: block;
 }
 
-.primero{
-    display: flex;
+.primero {
+  display: flex;
 }
 
-form div{
-    margin-top: 10px;
+form div {
+  margin-top: 10px;
 }
-.at i{
-    color : rgb(27 96 107);
-    margin: 12px;
+.at i {
+  color: rgb(27 96 107);
+  margin: 12px;
 }
-.at{
-    font-size: 6em;
-    text-shadow: rgb(43 95 103 / 70%) 6px 6px 1px;
-    float: left;
-}
-
-.nomemail{
-    align-self: baseline;
-    flex: auto
+.at {
+  font-size: 6em;
+  text-shadow: rgb(43 95 103 / 70%) 6px 6px 1px;
+  float: left;
 }
 
-.social{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.nomemail {
+  align-self: baseline;
+  flex: auto;
 }
-    
 
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
-
-
-button{
-    background-color: #04c924;
-    color: #fff;
+button {
+  background-color: #04c924;
+  color: #fff;
 }

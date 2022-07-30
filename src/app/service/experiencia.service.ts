@@ -4,27 +4,26 @@ import { Observable } from 'rxjs';
 import { Experiencia } from '../models/experiencia';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ExperienciaService {
+  private expeUrl = 'https://guarded-peak-41981.herokuapp.com/experiencia/';
 
-  private expeUrl = 'https://guarded-peak-41981.herokuapp.com/experiencia/'
+  constructor(private http: HttpClient) {}
 
-  constructor( private http: HttpClient) { }
-
-  public getExpe(): Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>(this.expeUrl + 'traer')
+  public getExpe(): Observable<Experiencia[]> {
+    return this.http.get<Experiencia[]>(this.expeUrl + 'traer');
   }
 
-  public save(experiencia: Experiencia): Observable<any>{
+  public save(experiencia: Experiencia): Observable<any> {
     return this.http.post<any>(this.expeUrl + 'crear', experiencia);
   }
 
-  public editar(id: number, experiencia: Experiencia): Observable<any>{
-    return this.http.put<any>(this.expeUrl + `update/${id}` , experiencia);
+  public editar(id: number, experiencia: Experiencia): Observable<any> {
+    return this.http.put<any>(this.expeUrl + `update/${id}`, experiencia);
   }
 
-  public delete(id: number): Observable<any>{
+  public delete(id: number): Observable<any> {
     return this.http.delete<any>(this.expeUrl + `borrar/${id}`);
   }
 }
